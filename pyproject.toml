@@ -30,3 +30,7 @@ allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["distortions"]
+exclude = [
+  "docs/tutorials/data/",
+  "site/",
+]
