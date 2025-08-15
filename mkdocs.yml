@@ -1,0 +1,29 @@
+site_name: Distortions Reference Page
+theme:
+  name: material
+plugins:
+- search
+- mkdocstrings:
+    handlers:
+        python:
+          options:
+            docstring_style: numpy
+            show_source: true
+            show_if_no_docstring: false
+            show_submodules: true
+- mkdocs-jupyter:
+    include: ["docs/tutorials/*.ipynb"]
+
+nav:
+  - Home: index.md
+  - Articles:
+      - PBMC Atlas: tutorials/pbmc.ipynb
+      - Analyzing Fragmentation in a Flattened Mammoth: tutorials/mammoth.ipynb
+      - Comparing Density Preserving Algorithms on the C. Elegans Data: tutorials/c_elegans.ipynb
+      - Interacting with scDEED Flagged Neighborhoods: tutorials/custom_neighbors.ipynb
+      - Comparing t-SNE Hyperparameters in the Hydra Atlas: tutorials/hydra-80.ipynb
+      - Understanding Isometrization with a Known Transformation: tutorials/fixed_transform.ipynb
+      - Density Preservation in a Gaussian Mixture Dataset: tutorials/two_clusters.ipynb
+      - Analyzing Topology Failures with Interlocking Links: tutorials/link_data.ipynb
+  - Reference:
+      - Function reference: reference/api.md

@@ -1,0 +1,32 @@
+[project]
+name = "distortion"
+version = "0.0.1"
+authors = [
+  { name="Kris Sankaran", email="ksankaran@wisc.edu" },
+  { name="Shuzhen Zhang", email="shuzhenz@uw.edu" },
+  { name="Chenab", email="chenab@uw.edu" },
+  { name="Marina Meila", email="mmp@stat.washington.edu" }
+]
+description = "Interactive visualization of distortion in nonlinear embeddings."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "CC-BY-4.0"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/krisrs1128/distortion/"
+Issues = "https://github.com/krisrs1128/distortion/Issues/"
+
+[build-system]
+requires = ["anywidget", "hatchling", "scipy", "traitlets"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["distortion"]
