@@ -1,6 +1,7 @@
 site_name: Distortions Reference Page
 theme:
   name: material
+use_directory_urls: false
 plugins:
 - search
 - mkdocstrings:
