@@ -1,8 +1,10 @@
 # Function Reference
 
-## `distortion.geometry`
+# API Reference
 
-::: distortion.geometry
+## `distortions.geometry`
+
+::: distortions.geometry
     options:
         members:
             - Geometry
@@ -13,9 +15,9 @@
             - neighborhoods
             - local_distortions
 
-## `distortion.visualization`
+## `distortions.visualization`
 
-::: distortion.visualization
+::: distortions.visualization
     options:
         members:
             - dplot

@@ -1,5 +1,5 @@
 [project]
-name = "distortion"
+name = "distortions"
 version = "0.0.1"
 authors = [
   { name="Kris Sankaran", email="ksankaran@wisc.edu" },
@@ -29,4 +29,4 @@ build-backend = "hatchling.build"
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["distortion"]
+packages = ["distortions"]

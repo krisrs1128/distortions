@@ -26,5 +26,6 @@ nav:
       - Understanding Isometrization with a Known Transformation: tutorials/fixed_transform.ipynb
       - Density Preservation in a Gaussian Mixture Dataset: tutorials/two_clusters.ipynb
       - Analyzing Topology Failures with Interlocking Links: tutorials/link_data.ipynb
+      - Saving Interactions as SVG: tutorials/svg.ipynb
   - Reference:
       - Function reference: reference/api.md
