@@ -34,3 +34,9 @@ exclude = [
   "docs/tutorials/data/",
   "site/",
 ]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "docs/tutorials/data/",
+  "site/",
+]
