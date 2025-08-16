@@ -1012,7 +1012,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-1">
@@ -1039,13 +1039,13 @@ counts = sc.datasets.pbmc3k().X.todense().T
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=72bd5641">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=72bd5641">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-2">
@@ -1089,6 +1089,111 @@ data &lt;- CreateSeuratObject(counts) |&gt;
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.2     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.1.0     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
+
+    WARNING: The R package "reticulate" only fixed recently
+    an issue that caused a segfault when used with rpy2:
+    https://github.com/rstudio/reticulate/pull/1188
+    Make sure that you use a version of that package that includes
+    the fix.
+    </pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Loading required package: SeuratObject
+Loading required package: sp
+‘SeuratObject’ was built under R 4.5.0 but the current version is
+4.5.1; it is recomended that you reinstall ‘SeuratObject’ as the ABI
+for R may have changed
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘scDEED’
+
+The following object is masked from ‘package:stats’:
+
+    optimize
+
+Warning: Data is of class matrix. Coercing to dgCMatrix.
+Finding variable features for layer counts
+Calculating gene variances
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Calculating feature variances of standardized and clipped values
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Normalizing layer: counts
+Performing log-normalization
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Centering and scaling data matrix
+  |                                                                              |                                                                      |   0%  |                                                                              |===================================                                   |  50%  |                                                                              |======================================================================| 100%
+PC_ 1 
+Positive:  Feature28818, Feature30430, Feature10609, Feature10611, Feature30934, Feature16745, Feature21054, Feature18999, Feature1956, Feature2225 
+	   Feature32216, Feature29429, Feature31964, Feature1958, Feature1846, Feature31959, Feature23264, Feature18773, Feature18149, Feature17465 
+	   Feature13509, Feature13383, Feature30115, Feature25893, Feature1903, Feature23057, Feature22827, Feature19264, Feature25268, Feature2483 
+Negative:  Feature19155, Feature10608, Feature24758, Feature1636, Feature26263, Feature12205, Feature19180, Feature2301, Feature26825, Feature13131 
+	   Feature15831, Feature8890, Feature28833, Feature2760, Feature4088, Feature7587, Feature13779, Feature8887, Feature15412, Feature13126 
+	   Feature13862, Feature19991, Feature532, Feature4134, Feature7224, Feature18406, Feature9383, Feature31076, Feature20238, Feature11419 
+PC_ 2 
+Positive:  Feature30657, Feature18945, Feature23289, Feature10681, Feature10678, Feature10682, Feature23927, Feature27508, Feature10680, Feature9799 
+	   Feature10701, Feature10696, Feature10685, Feature10679, Feature10700, Feature10694, Feature2243, Feature21419, Feature10608, Feature17729 
+	   Feature23476, Feature26139, Feature25915, Feature31683, Feature18431, Feature7803, Feature7465, Feature30509, Feature2121, Feature25909 
+Negative:  Feature31076, Feature17450, Feature28833, Feature8890, Feature22590, Feature7345, Feature19180, Feature4047, Feature22589, Feature7170 
+	   Feature26840, Feature2238, Feature26825, Feature2301, Feature2317, Feature16816, Feature16916, Feature17424, Feature7587, Feature19539 
+	   Feature32158, Feature1965, Feature16089, Feature24758, Feature7593, Feature3295, Feature11888, Feature2318, Feature32017, Feature11419 
+PC_ 3 
+Positive:  Feature10681, Feature30657, Feature27508, Feature10682, Feature10701, Feature9799, Feature10700, Feature18945, Feature10680, Feature10679 
+	   Feature10678, Feature10685, Feature23289, Feature23927, Feature10694, Feature10696, Feature21419, Feature2243, Feature25915, Feature17729 
+	   Feature23476, Feature7465, Feature23451, Feature26139, Feature31683, Feature18431, Feature12405, Feature4028, Feature7669, Feature9601 
+Negative:  Feature7697, Feature7696, Feature4865, Feature9825, Feature12535, Feature19923, Feature6459, Feature2538, Feature29270, Feature14587 
+	   Feature10421, Feature19444, Feature27143, Feature20143, Feature5519, Feature15067, Feature10867, Feature20164, Feature27373, Feature13865 
+	   Feature10828, Feature10241, Feature10110, Feature31597, Feature14266, Feature22002, Feature22527, Feature10390, Feature28980, Feature26183 
+PC_ 4 
+Positive:  Feature10681, Feature10421, Feature7696, Feature4865, Feature30657, Feature27508, Feature7697, Feature12535, Feature9825, Feature10682 
+	   Feature18945, Feature9799, Feature6459, Feature10701, Feature19923, Feature2538, Feature10867, Feature20143, Feature19444, Feature10685 
+	   Feature14587, Feature29270, Feature15067, Feature10680, Feature10700, Feature27143, Feature5519, Feature10678, Feature23289, Feature20164 
+Negative:  Feature17040, Feature1958, Feature1963, Feature1965, Feature4028, Feature1956, Feature24758, Feature13126, Feature1901, Feature31959 
+	   Feature232, Feature4088, Feature16745, Feature21054, Feature1636, Feature1957, Feature18938, Feature8803, Feature1903, Feature15831 
+	   Feature13127, Feature19354, Feature16089, Feature19155, Feature10611, Feature13131, Feature7692, Feature595, Feature4026, Feature26245 
+PC_ 5 
+Positive:  Feature10608, Feature17040, Feature15831, Feature17443, Feature4088, Feature24011, Feature1636, Feature19254, Feature4582, Feature8803 
+	   Feature24758, Feature25589, Feature8033, Feature20638, Feature27657, Feature27929, Feature20905, Feature13779, Feature25893, Feature22260 
+	   Feature27827, Feature9383, Feature16960, Feature2760, Feature17357, Feature13127, Feature925, Feature11512, Feature13865, Feature532 
+Negative:  Feature22590, Feature7345, Feature31076, Feature4047, Feature17450, Feature26840, Feature28833, Feature7170, Feature8890, Feature16816 
+	   Feature22589, Feature2317, Feature19180, Feature32158, Feature16916, Feature26825, Feature7593, Feature2318, Feature1958, Feature26839 
+	   Feature30430, Feature7587, Feature1737, Feature9855, Feature1956, Feature2225, Feature22798, Feature31959, Feature232, Feature1957 
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4d8ac33a">
@@ -1096,7 +1201,7 @@ data &lt;- CreateSeuratObject(counts) |&gt;
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-3">
@@ -1133,7 +1238,7 @@ normalized_counts &lt;- GetAssayData(data, layer = "scale.data") |&gt;
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-4">
@@ -1162,13 +1267,13 @@ normalized_counts = np.array(rpy2.robjects.globalenv["normalized_counts"])</div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b6f24a58">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b6f24a58">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-5">
@@ -1216,6 +1321,44 @@ N &lt;- map(dubious, ~ which(G[.x, ] &gt; 0)) |&gt;
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[1] "Permuting data"
+  |======================================================================| 100%[1] "Permutation finished"
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Warning: Number of dimensions changing from 50 to 8
+Computing nearest neighbor graph
+Computing SNN
+In addition: Warning messages:
+1: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scDEED package.
+  Please report the issue to the authors.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+generated. 
+2: The `slot` argument of `SetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the scDEED package.
+  Please report the issue to the authors.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+generated. 
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7c7bb7e2">
@@ -1223,7 +1366,7 @@ N &lt;- map(dubious, ~ which(G[.x, ] &gt; 0)) |&gt;
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-6">
@@ -1262,7 +1405,7 @@ N_dict = {int(key): list(val) for key, val in N.items()}</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
@@ -1301,7 +1444,7 @@ plots["scdeed_distort"] = dplot(embeddings, width=440, height=440)\
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
@@ -1322,13 +1465,13 @@ plots["scdeed_distort"] = dplot(embeddings, width=440, height=440)\
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5a868712">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5a868712">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-9">
@@ -1344,6 +1487,24 @@ plots["scdeed_distort"] = dplot(embeddings, width=440, height=440)\
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="p">[</span><span class="n">display</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">plots</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-9">[display(p) for p in plots.values()]</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>dplot(dataset=[{'embedding_0': 5.783105882455072, 'embedding_1': -12.634558999702302, 'x0': -0.303412665270283…</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>[None]</pre>
 </div>
 </div>
 </div>

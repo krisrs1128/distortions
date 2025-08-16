@@ -203,6 +203,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="index.html" class="md-nav__link md-nav__link--active">
         
   
@@ -214,6 +227,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Help
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -559,6 +609,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Help
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -576,7 +652,22 @@
 <h1 id="distortions">Distortions</h1>
 <p>The <code>distortions</code> package gives functions to compute and visualize the
 distortions that are introduced by nonlinear dimensionality reduction
-algorithms.</p>
+algorithms. It is designed to wrap arbitrary embedding methods and builds on the
+distortion estimation routines from the <a href="https://mmp2.github.io/megaman/"><code>megaman</code> package</a>.  The resulting visualizations
+visualizations can let you interactively query properties that are not well
+preserved by the embedding. For example, the image below shows us selecting
+distances that are larger in the embedding space compared to the original data
+space (to run this yourself, see the <a href="tutorials/pbmc.html"><code>PBMC Atlas</code> article</a>).</p>
+<p><img alt="" src="https://github.com/krisrs1128/distortions-data/blob/main/figures/pbmc_boxplot.gif?raw=true" /></p>
+<h2 id="installation">Installation</h2>
+<p>You can install the package using:</p>
+<pre><code>python -m pip install distortions
+</code></pre>
+<h2 id="help">Help</h2>
+<p>You can reach us by creating an Issue in the <a href="https://github.com/krisrs1128/distortions/issues">package
+repository</a> or sending an
+email to <a href="mailto:ksankaran@wisc.edu">ksankaran@wisc.edu</a>. We appreciate your
+trying out the package and will try our best to reply promptly.</p>
 
 
 
