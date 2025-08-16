@@ -18,8 +18,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/krisrs1128/distortion/"
-Issues = "https://github.com/krisrs1128/distortion/Issues/"
+Homepage = "https://github.com/krisrs1128/distortions/"
+Issues = "https://github.com/krisrs1128/distortions/Issues/"
 
 [build-system]
 requires = ["anywidget", "hatchling", "scipy", "traitlets"]
