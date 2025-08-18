@@ -1,11 +1,11 @@
 [project]
 name = "distortions"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="Kris Sankaran", email="ksankaran@wisc.edu" },
   { name="Shuzhen Zhang", email="shuzhenz@uw.edu" },
   { name="Chenab", email="chenab@uw.edu" },
-  { name="Marina Meila", email="mmp@stat.washington.edu" }
+  { name="Marina Meila", email="mmp@uwaterloo.ca" }
 ]
 description = "Interactive visualization of distortion in nonlinear embeddings."
 readme = "README.md"
@@ -16,6 +16,9 @@ classifiers = [
     "License :: Other/Proprietary License",
     "Operating System :: OS Independent",
 ]
+
+[project.optional-dependencies]
+plotting = ["altair"]
 
 [project.urls]
 Homepage = "https://github.com/krisrs1128/distortions/"
