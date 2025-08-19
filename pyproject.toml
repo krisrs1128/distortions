@@ -1,6 +1,6 @@
 [project]
 name = "distortions"
-version = "0.0.3"
+version = "0.0.4"
 authors = [
   { name="Kris Sankaran", email="ksankaran@wisc.edu" },
   { name="Shuzhen Zhang", email="shuzhenz@uw.edu" },
