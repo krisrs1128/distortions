@@ -1,4 +1,4 @@
-import {DistortionPlot} from "https://esm.sh/distortions@0.0.21";
+import {DistortionPlot} from "distortions";
 import * as d3 from "https://esm.sh/d3@7";
 
 // Function to get priority based on string content
