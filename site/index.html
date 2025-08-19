@@ -244,9 +244,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#quickstart" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      Quickstart
     </span>
   </a>
   
@@ -616,9 +616,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#quickstart" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      Quickstart
     </span>
   </a>
   
@@ -653,16 +653,73 @@
 <p>The <code>distortions</code> package gives functions to compute and visualize the
 distortions that are introduced by nonlinear dimensionality reduction
 algorithms. It is designed to wrap arbitrary embedding methods and builds on the
-distortion estimation routines from the <a href="https://mmp2.github.io/megaman/"><code>megaman</code> package</a>.  The resulting visualizations
-visualizations can let you interactively query properties that are not well
-preserved by the embedding. For example, the image below shows us selecting
-distances that are larger in the embedding space compared to the original data
-space (to run this yourself, see the <a href="tutorials/pbmc.html"><code>PBMC Atlas</code> article</a>).</p>
+distortion estimation routines from the <a href="https://mmp2.github.io/megaman/"><code>megaman</code>
+package</a>.  The resulting visualizations can let
+you interactively query properties that are not well preserved by the embedding.
+For example, the image below shows us selecting distances that are larger in the
+embedding space compared to the original data space. This allows us to describe
+the large-scale distortions induced by the embedding. For example, we can that
+some of the T cells have many neighbors with monocytes (to run this yourself,
+see the <a href="tutorials/pbmc.html"><code>PBMC Atlas</code> article</a>).</p>
 <p><img alt="" src="https://github.com/krisrs1128/distortions-data/blob/main/figures/pbmc_boxplot.gif?raw=true" /></p>
-<h2 id="installation">Installation</h2>
+<p>Alternatively, we can study how the embedding warps distances more locally. Each
+ellipse in the figure below represents the way in which distances in the
+original data manifold are warped. By hovering over different regions of the
+map, we invert the warping in the region surrounding the mouse. For example,
+this shows that the T cells near the top and bottom of the T cell cluster are in
+fact more distant from each othoer than the static embedding would suggest.</p>
+<p><img alt="" src="https://github.com/krisrs1128/distortions-data/blob/main/figures/pbmc_isometry.gif?raw=true" /></p>
+<h2 id="quickstart">Quickstart</h2>
 <p>You can install the package using:</p>
-<pre><code>python -m pip install distortions
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python -m pip install distortions
+</span></code></pre></div>
+<p>Here's a small example on a UMAP applied to a simulated <code>AnnData</code> object. First
+we generate some random data and embeddings.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">anndata</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ad</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">scanpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sc</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">adata</span> <span class="o">=</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">)))</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">sc</span><span class="o">.</span><span class="n">tl</span><span class="o">.</span><span class="n">umap</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Next we estimate the local distortions and bind the relevant ellipse information
+to our embeddings. The <code>Geometry</code> object comes from the <code>megaman</code> package and
+gives ways of representing the intrinsic geometry of a manifold.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">bind_metric</span><span class="p">,</span> <span class="n">local_distortions</span><span class="p">,</span> <span class="n">neighborhoods</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">(</span><span class="n">affinity_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="n">adjacency_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;n_neighbors&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">})</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">_</span><span class="p">,</span> <span class="n">Hvv</span><span class="p">,</span> <span class="n">Hs</span> <span class="o">=</span> <span class="n">local_distortions</span><span class="p">(</span><span class="n">adata</span><span class="o">.</span><span class="n">obsm</span><span class="p">[</span><span class="s2">&quot;X_umap&quot;</span><span class="p">],</span> <span class="n">adata</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">geom</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">embedding</span> <span class="o">=</span> <span class="n">bind_metric</span><span class="p">(</span><span class="n">adata</span><span class="o">.</span><span class="n">obsm</span><span class="p">[</span><span class="s2">&quot;X_umap&quot;</span><span class="p">],</span> <span class="n">Hvv</span><span class="p">,</span> <span class="n">Hs</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Now we can make the visualization.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">dplot</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">N</span> <span class="o">=</span> <span class="n">neighborhoods</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">dplot</span><span class="p">(</span><span class="n">embedding</span><span class="p">)</span>\
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="o">.</span><span class="n">mapping</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;embedding_0&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;embedding_1&quot;</span><span class="p">)</span>\
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="o">.</span><span class="n">inter_edge_link</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>\
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="o">.</span><span class="n">geom_ellipse</span><span class="p">()</span>
+</span></code></pre></div>
+<p><img alt="" src="https://raw.githubusercontent.com/krisrs1128/distortions-data/main/figures/quickstart.gif" /></p>
+<p>At a high level, the main functions exported by this package are:</p>
+<ul>
+<li><code>local_distortions</code>: Estimate the local distortion associated with each sample.</li>
+<li><code>neighborhoods</code>: Identify neighborhoods that have been fragmented by the embedding method. These are sets of points that had been close together in the original space but which are spread far apart in the embedding.</li>
+<li><code>dplot</code>: Initialize a distortion plot object. Different encodings and interactions can be layered on top of this initial call.</li>
+</ul>
+<p>Each <code>dplot</code> object has a few static (<code>geom</code>) and interactive (<code>inter</code>) layers
+that we can then assemble to create a distortion plot.</p>
+<ul>
+<li><code>geom_ellipse</code>: Draw an ellipse layer that encodes the local distortion associated with each sample.</li>
+<li><code>geom_hair</code>: Draw an line segment layer that encodes the local distortion associated with each sample. It's visually more compact than <code>geom_ellipse</code>, at the cost of only showing the ratio between ellipse axes lengths.</li>
+<li><code>inter_isometry</code>: Interactively isometrize from the region surrounding the mouse. This reduces the distortion around the mouse position, at the potential cost of increasing distortion globally.</li>
+<li><code>inter_edge_link</code>: Highlight distorted neighborhoods. This expects the output of <code>neighborhoods</code> as input. Hovering over one distorted neighborhood reveals all the edges that it's made up of.</li>
+<li><code>inter_boxplot</code>: Allow selection of outlying edges which have either much larger or smaller embedding distance relative to their original distance.</li>
+</ul>
+<p>The full function reference can be found <a href="reference/api.html">here</a>. You can
+find more realistic examples applying the package in the articles listed at the
+side of this page.</p>
 <h2 id="help">Help</h2>
 <p>You can reach us by creating an Issue in the <a href="https://github.com/krisrs1128/distortions/issues">package
 repository</a> or sending an
