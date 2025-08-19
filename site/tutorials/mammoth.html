@@ -1270,13 +1270,24 @@ embedding = bind_metric(embedding, Hvv, Hs)</div>
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=617547ff">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Before visualizing distortion, let's visualize the 3D skeleton and analyze the output of dimensional reduction without any overlays. The block below is partly to draw a 3D scatterplot of the mammoth skeleton. Notice some of the subtleties. The tusks don't have even sampling density. The feet are slightly offset. There are small gaps on the left-hand side ribs near the back legs. On the legs, they're more points, sampled near the feet and the knees, then on the longer bones. There are also seem to be more points on the front legs compared to the back. The skull has a kind of bump near the top that's made of relatively few points. These are the kinds of details that exist in real data that we hope nonlinear dimensionality reduction should be able to capture.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eb1d8dbd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-4">
@@ -1289,14 +1300,18 @@ embedding = bind_metric(embedding, Hvv, Hs)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
 
+<span class="n">plotly</span><span class="o">.</span><span class="n">offline</span><span class="o">.</span><span class="n">init_notebook_mode</span><span class="p">()</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_3d</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'z'</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="s1">'y'</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker_color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">)</span>
 <span class="n">fig</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">import plotly.express as px
+<div class="clipboard-copy-txt" id="cell-4">import plotly
+import plotly.express as px
 
+plotly.offline.init_notebook_mode()
 fig = px.scatter_3d(data, x='x', y='z', z='y')
 fig.update_traces(marker_size=1, marker_color="black")
 fig</div>
@@ -1311,6 +1326,17 @@ fig</div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d3e941de">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>In the block below, we are visualizing the results of UMAP applied to these 3D data. The correspondence is relatively clear we can see that the algorithm has preserved the global relationships between the parts of the mammoth. It's impressive that we still seem to preserve the ribs and even the distinction between some toes at least on the front legs. But we can also immediately recognize some distortion. The tasks are uneven lengths here, even though they're relatively even in the original data. The tail looks like it's contained inside of the pelvis. The symmetry between the ribs seems a bit off. Indeed, the entire shoulder area appears to be a bit "broken."</p>
 </div>
 </div>
 </div>
@@ -1428,6 +1454,17 @@ alt.Chart(embedding).mark_circle(color="black").encode(
 </script>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=37079414">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We can get a sense of the global distortion by plotting the embedding distance between points against the original distances in 3D. What we see here -- and it's relatively common across many examples we've studied -- is that the embedding distances are quite skewed to the right. The embedding pairwise distance is due increase with the original pairwise distances, but there's a long tail of outliers. These are points that are far apart in the embedding, but which close in the original data. This visualization is static, but we'll see how we can query the specific outliers in our interactive pots.</p>
 </div>
 </div>
 </div>
@@ -1559,6 +1596,17 @@ alt.Chart(distances).mark_boxplot(outliers=True).encode(
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b572f863">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We now move to the interactive visualizations specific to the distortions package. Our first plot will highlight the fragmented neighborhoods. These are points that are highly separated from their neighbors in the embedding space. The intuition roughly correspondence to the boxplot from above. Roughly, for any point, we evaluate the fraction of its neighbors whose distances are outlying in those box plots, and if a large enough fraction or outliers, we consider the neighborhood around that point to be fragmented. More formally in the code below we look for points where at least 30% of its neighbors are three IQRs away from the median embedding distance across the bins associated with those neighbors. Moving your mouse close to any of these neighborhoods will draw edges to the original neighbors used to define the UMAP. This interactivity is defined by the inter_edge_link layer. The other layers are used should define the static ellipse visualization.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a8ceb5c1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -1599,6 +1647,16 @@ plots["mamoth_links"] = dplot(embedding, height = 350, width=450)\
     .geom_ellipse(opacity=0.8, radiusMin=.5, radiusMax=10)</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4915230c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 </div>
 </div>
 </div>

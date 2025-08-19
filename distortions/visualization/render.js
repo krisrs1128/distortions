@@ -1,9 +1,5 @@
-// (1) To verify the JS package is installed, check for a `node_modules/distortions` directory in your project root. You can also run `npm list distortions` or `yarn list distortions` in your terminal to confirm installation.
-
-// (2) To import it in this file, ensure that your build system (e.g., webpack, vite, or anywidget's JS bundler) is configured to resolve npm packages. If you are using anywidget, you should use a bare import:
-
-import {DistortionPlot} from "https://cdn.jsdelivr.net/npm/distortions@0.0.14/index.js";
-import * as d3 from "https://cdn.skypack.dev/d3@7";
+import {DistortionPlot} from "https://esm.sh/distortions@0.0.21";
+import * as d3 from "https://esm.sh/d3@7";
 
 // Function to get priority based on string content
 function sort_priority(str) {
