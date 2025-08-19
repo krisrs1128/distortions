@@ -6454,7 +6454,7 @@ distance summaries and outlier information.</p>
 <span class="sd">    &gt;&gt;&gt; df = pd.DataFrame({...})</span>
 <span class="sd">    &gt;&gt;&gt; dplot(df).mapping(x=&#39;embedding_1&#39;, y=&#39;embedding_2&#39;).geom_ellipse()</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">widget_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
+    <span class="n">widget_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;widget&quot;</span>
     <span class="n">_esm</span> <span class="o">=</span> <span class="n">widget_dir</span> <span class="o">/</span> <span class="s2">&quot;render.js&quot;</span>
     <span class="n">_mapping</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Dict</span><span class="p">()</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">dataset</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">List</span><span class="p">()</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
