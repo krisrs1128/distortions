@@ -56,7 +56,7 @@ class dplot(anywidget.AnyWidget):
     >>> df = pd.DataFrame({...})
     >>> dplot(df).mapping(x='embedding_1', y='embedding_2').geom_ellipse()
     """
-    widget_dir = Path(__file__).parent
+    widget_dir = Path(__file__).parent / "widget"
     _esm = widget_dir / "render.js"
     _mapping = traitlets.Dict().tag(sync=True)
     dataset = traitlets.List().tag(sync=True)
