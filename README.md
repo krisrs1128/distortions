@@ -10,7 +10,7 @@ For example, the image below shows us selecting distances that are larger in the
 embedding space compared to the original data space. This allows us to describe
 the large-scale distortions induced by the embedding. For example, we can that
 some of the T cells have many neighbors with monocytes (to run this yourself,
-see the [`PBMC Atlas` article](tutorials/pbmc.html)).
+see the [`PBMC Atlas` article](https://krisrs1128.github.io/distortions/site/tutorials/pbmc.html)).
 
 ![](https://github.com/krisrs1128/distortions-data/blob/main/figures/pbmc_boxplot.gif?raw=true)
 
@@ -86,9 +86,10 @@ that we can then assemble to create a distortion plot.
 * `inter_edge_link`: Highlight distorted neighborhoods. This expects the output of `neighborhoods` as input. Hovering over one distorted neighborhood reveals all the edges that it's made up of.
 * `inter_boxplot`: Allow selection of outlying edges which have either much larger or smaller embedding distance relative to their original distance.
 
-The full function reference can be found [here](reference/api.html). You can
-find more realistic examples applying the package in the articles listed at the
-side of this page.
+The full function reference can be found
+[here](https://krisrs1128.github.io/distortions/site/reference/api.html). You
+can find more realistic examples applying the package in the articles listed at
+the side of this page.
 
 ## Help
 
