@@ -28,7 +28,7 @@ nav:
   - Articles:
       - PBMC Atlas: tutorials/pbmc.ipynb
       - Analyzing Fragmentation in a Flattened Mammoth: tutorials/mammoth.ipynb
-      - Comparing Density Preserving Algorithms on the C. Elegans Data: tutorials/c_elegans.ipynb
+      - Comparing Density Preserving Algorithms on the C. Elegans Data: tutorials/c_elegans_algorithm_comparison.ipynb
       - Interacting with scDEED Flagged Neighborhoods: tutorials/custom_neighbors.ipynb
       - Comparing t-SNE Hyperparameters in the Hydra Atlas: tutorials/hydra-80.ipynb
       - Understanding Isometrization with a Known Transformation: tutorials/fixed_transform.ipynb
