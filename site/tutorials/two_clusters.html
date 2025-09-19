@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
       
       
 
@@ -304,7 +304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="c_elegans.html" class="md-nav__link">
+      <a href="c_elegans_algorithm_comparison.html" class="md-nav__link">
         
   
   
@@ -1133,11 +1133,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">20250702</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">two_clusters_differential</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">two_clusters_differential</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Two 2D clusters of different sizes."""</span>
     <span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -1290,7 +1290,7 @@ data_df["s1"] = 1</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">dplot</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">distortions.visualization</span> <span class="kn">import</span> <span class="n">dplot</span>
 
 <span class="n">plots</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">plots</span><span class="p">[</span><span class="s2">"two_clusters"</span><span class="p">]</span> <span class="o">=</span> <span class="n">dplot</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">350</span><span class="p">,</span> <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>\
@@ -1367,8 +1367,8 @@ plots["two_clusters"]</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">anndata</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnnData</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">scanpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sc</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">anndata</span> <span class="kn">import</span> <span class="n">AnnData</span>
+<span class="kn">import</span> <span class="nn">scanpy</span> <span class="k">as</span> <span class="nn">sc</span>
 
 <span class="n">adata</span> <span class="o">=</span> <span class="n">AnnData</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">M</span><span class="p">)))</span>
 <span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="n">n_neighbors</span><span class="p">)</span>
@@ -1514,7 +1514,7 @@ plots["plain_embedding"]</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">bind_metric</span><span class="p">,</span> <span class="n">local_distortions</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">distortions.geometry</span> <span class="kn">import</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">bind_metric</span><span class="p">,</span> <span class="n">local_distortions</span>
 
 <span class="n">radius</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">adata</span><span class="o">.</span><span class="n">obsp</span><span class="p">[</span><span class="s2">"distances"</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 <span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">(</span><span class="s2">"brute"</span><span class="p">,</span> <span class="n">laplacian_method</span><span class="o">=</span><span class="s2">"geometric"</span><span class="p">,</span> <span class="n">affinity_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"radius"</span><span class="p">:</span> <span class="n">radius</span><span class="p">},</span> <span class="n">adjacency_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"n_neighbors"</span><span class="p">:</span> <span class="n">n_neighbors</span><span class="p">},</span> <span class="n">laplacian_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"scaling_epps"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
@@ -1579,7 +1579,7 @@ embedding["cluster"] = data_df["cluster"]</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">eigenvalue_plot</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">distortions.visualization</span> <span class="kn">import</span> <span class="n">eigenvalue_plot</span>
 
 <span class="n">lambda_plot</span> <span class="o">=</span> <span class="n">eigenvalue_plot</span><span class="p">(</span><span class="n">Hs</span><span class="p">,</span> <span class="n">embedding</span><span class="p">[</span><span class="s2">"cluster"</span><span class="p">])</span>\
     <span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>\
@@ -1731,7 +1731,7 @@ lambda_plot</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">neighborhoods</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">distortions.geometry</span> <span class="kn">import</span> <span class="n">neighborhoods</span>
 
 <span class="n">N</span> <span class="o">=</span> <span class="n">neighborhoods</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">outlier_factor</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">plots</span><span class="p">[</span><span class="s2">"two_clusters_links"</span><span class="p">]</span> <span class="o">=</span> <span class="n">dplot</span><span class="p">(</span><span class="n">embedding</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">350</span><span class="p">,</span> <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>\
@@ -2192,10 +2192,10 @@ plots["two_clusters_transform"]</div>
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>

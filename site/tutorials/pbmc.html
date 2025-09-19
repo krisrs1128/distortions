@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
       
       
 
@@ -378,7 +378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="c_elegans.html" class="md-nav__link">
+      <a href="c_elegans_algorithm_comparison.html" class="md-nav__link">
         
   
   
@@ -1154,7 +1154,7 @@ just replace the <code>sc.datasets.pbmc3k_processed()</code> call below with <co
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scanpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sc</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">scanpy</span> <span class="k">as</span> <span class="nn">sc</span>
 
 <span class="n">adata</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">pbmc3k_processed</span><span class="p">()</span>
 </pre></div>
@@ -1219,8 +1219,8 @@ adata = sc.datasets.pbmc3k_processed()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">scanpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sc</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">scanpy</span> <span class="k">as</span> <span class="nn">sc</span>
 <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">20250410</span><span class="p">)</span>
 
 <span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">50</span>
@@ -1342,8 +1342,8 @@ adata.obs["cell_type"] = adata.obs["clusters"].map(cluster2annotation).astype("c
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">local_distortions</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">distortions.geometry</span> <span class="kn">import</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">local_distortions</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">embedding</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">obsm</span><span class="p">[</span><span class="s2">"X_umap"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">radius</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">adata</span><span class="o">.</span><span class="n">obsp</span><span class="p">[</span><span class="s2">"distances"</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
@@ -1440,7 +1440,7 @@ for i in range(len(H)):
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">bind_metric</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">distortions.geometry</span> <span class="kn">import</span> <span class="n">bind_metric</span>
 
 <span class="n">embedding</span> <span class="o">=</span> <span class="n">bind_metric</span><span class="p">(</span><span class="n">embedding</span><span class="p">,</span> <span class="n">Hvv</span><span class="p">,</span> <span class="n">Hs</span><span class="p">)</span>
 <span class="n">embedding</span><span class="p">[</span><span class="s2">"cell_type"</span><span class="p">]</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="s2">"cell_type"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
@@ -1495,7 +1495,7 @@ embedding["cell_type"] = adata.obs["cell_type"].values</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">altair</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">alt</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 
 <span class="n">sort_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Monocytes"</span><span class="p">,</span> <span class="s2">"NK"</span><span class="p">,</span> <span class="s2">"T-cell"</span><span class="p">,</span> <span class="s2">"Dendritic"</span><span class="p">,</span> <span class="s2">"Plasma"</span><span class="p">,</span> <span class="s2">"B-cell"</span><span class="p">,</span> <span class="s2">"Other"</span><span class="p">]</span>
 <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">embedding</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
@@ -1627,7 +1627,7 @@ alt.Chart(embedding).mark_circle().encode(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">eigenvalue_plot</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">distortions.visualization</span> <span class="kn">import</span> <span class="n">eigenvalue_plot</span>
 
 <span class="n">lambda_plot</span> <span class="o">=</span> <span class="n">eigenvalue_plot</span><span class="p">(</span>
     <span class="n">Hs</span><span class="p">,</span> <span class="n">embedding</span><span class="p">[</span><span class="s2">"cell_type"</span><span class="p">],</span> 
@@ -1900,8 +1900,8 @@ lambda_plot_zoom</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">neighborhoods</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">distortions.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">dplot</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">distortions.geometry</span> <span class="kn">import</span> <span class="n">neighborhoods</span>
+<span class="kn">from</span> <span class="nn">distortions.visualization</span> <span class="kn">import</span> <span class="n">dplot</span>
 
 <span class="n">N</span> <span class="o">=</span> <span class="n">neighborhoods</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span> <span class="n">outlier_factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">plots</span> <span class="o">=</span> <span class="p">{}</span> 
@@ -1994,7 +1994,7 @@ plots["pbmc_links"]</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">neighborhood_distances</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">distortions.geometry</span> <span class="kn">import</span> <span class="n">neighborhood_distances</span>
 
 <span class="n">dists</span> <span class="o">=</span> <span class="n">neighborhood_distances</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span>
 <span class="n">plots</span><span class="p">[</span><span class="s2">"pbmc_boxplot"</span><span class="p">]</span> <span class="o">=</span> <span class="n">dplot</span><span class="p">(</span><span class="n">embedding</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">540</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">340</span><span class="p">)</span>\
@@ -2381,10 +2381,10 @@ plots["pbmc_metric"] = dplot(embedding, width=440, height=340)\
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>
