@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -1033,14 +1033,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">distortions.geometry</span> <span class="kn">import</span> <span class="n">neighborhoods</span><span class="p">,</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">local_distortions</span><span class="p">,</span> <span class="n">bind_metric</span>
-<span class="kn">from</span> <span class="nn">distortions.visualization</span> <span class="kn">import</span> <span class="n">dplot</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">scanpy</span> <span class="k">as</span> <span class="nn">sc</span>
-<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">distortions.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">neighborhoods</span><span class="p">,</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">local_distortions</span><span class="p">,</span> <span class="n">bind_metric</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">distortions.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">dplot</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scanpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sc</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">altair</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">alt</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-1">import numpy as np
 import pandas as pd
@@ -1454,9 +1454,9 @@ Data max value: 26.90514
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s1">'cell.type'</span><span class="p">])</span><span class="o">.</span><span class="n">codes</span>
 <span class="n">label_pick</span> <span class="o">=</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">34</span><span class="p">]</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
 
-<span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">num_sample</span><span class="p">,</span> <span class="n">label_pick</span><span class="p">):</span>    
+<span class="k">def</span><span class="w"> </span><span class="nf">sampling</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">num_sample</span><span class="p">,</span> <span class="n">label_pick</span><span class="p">):</span>    
     <span class="n">class_indices</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
         <span class="n">class_indices</span><span class="p">[</span><span class="n">label</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
@@ -1515,8 +1515,8 @@ sampled_indices = sampling(colors, 1000, label_pick)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="kn">import</span> <span class="n">KDTree</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.spatial</span><span class="w"> </span><span class="kn">import</span> <span class="n">KDTree</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="n">cache_file</span> <span class="o">=</span> <span class="s2">"data/c_elegans_distances.npy"</span>
 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">cache_file</span><span class="p">):</span>
@@ -1606,7 +1606,7 @@ geom = Geometry("brute", laplacian_method="geometric", affinity_kwds={"radius": 
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># set random seed for reproducibility</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">umap</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">umap</span>
 <span class="n">embedding_dumap</span> <span class="o">=</span> <span class="n">umap</span><span class="o">.</span><span class="n">UMAP</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_epochs</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">densmap</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">embedding_umap</span> <span class="o">=</span> <span class="n">umap</span><span class="o">.</span><span class="n">UMAP</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_epochs</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">densmap</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
@@ -1746,7 +1746,7 @@ plt.show()</div>
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># transfer a numpy data to anndata</span>
-<span class="kn">import</span> <span class="nn">anndata</span> <span class="k">as</span> <span class="nn">ad</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">anndata</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ad</span>
 <span class="n">adata</span> <span class="o">=</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">sampled_indices</span><span class="p">])</span>
 <span class="n">adata</span><span class="o">.</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span>
 <span class="n">adata</span><span class="o">.</span><span class="n">obsm</span><span class="p">[</span><span class="s2">"X_UMAP"</span><span class="p">]</span> <span class="o">=</span> <span class="n">embedding_umap</span><span class="p">[</span><span class="n">sampled_indices</span><span class="p">]</span>
@@ -1872,7 +1872,7 @@ dplot(umap_embed_test, width=600, height=500)\
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">distortions.geometry</span> <span class="kn">import</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">bind_metric</span><span class="p">,</span> <span class="n">local_distortions</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">bind_metric</span><span class="p">,</span> <span class="n">local_distortions</span>
 <span class="n">dumap_embed_test</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">obsm</span><span class="p">[</span><span class="s2">"X_DenseUMAP"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">(</span><span class="s2">"brute"</span><span class="p">,</span> <span class="n">laplacian_method</span><span class="o">=</span><span class="s2">"geometric"</span><span class="p">,</span> <span class="n">affinity_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"radius"</span><span class="p">:</span> <span class="n">radius</span><span class="p">},</span> <span class="n">adjacency_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"n_neighbors"</span><span class="p">:</span> <span class="n">n_neighbors</span><span class="p">},</span> <span class="n">laplacian_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"scaling_epps"</span><span class="p">:</span> <span class="n">radius</span><span class="p">})</span>
 <span class="n">H</span><span class="p">,</span> <span class="n">Hvv</span><span class="p">,</span> <span class="n">Hs</span> <span class="o">=</span> <span class="n">local_distortions</span><span class="p">(</span><span class="n">dumap_embed_test</span><span class="p">,</span> <span class="n">adata</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">geom</span><span class="p">)</span>
@@ -1960,7 +1960,7 @@ dplot(dumap_embed_test, width=600, height=500)\
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">distortions.geometry.neighborhoods</span> <span class="kn">import</span> <span class="n">broken_knn</span><span class="p">,</span> <span class="n">neighbor_generator</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.geometry.neighborhoods</span><span class="w"> </span><span class="kn">import</span> <span class="n">broken_knn</span><span class="p">,</span> <span class="n">neighbor_generator</span>
 
 <span class="n">brokens</span> <span class="o">=</span> <span class="n">broken_knn</span><span class="p">(</span><span class="n">adata</span><span class="o">.</span><span class="n">obsm</span><span class="p">[</span><span class="s1">'X_UMAP'</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">z_thresh</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span> <span class="c1"># after I found the broken points</span>
 <span class="n">broken_neighbors</span> <span class="o">=</span> <span class="n">neighbor_generator</span><span class="p">(</span><span class="n">embedding_umap</span><span class="p">,</span> <span class="p">[</span><span class="n">sampled_indices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">brokens</span><span class="p">],</span> <span class="n">number_neighbor</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># generate neighbor dict</span>
@@ -2132,7 +2132,7 @@ adata_add.obsm["X_DUMAP"] = embedding_umap[sampled_indices + broken_neighbors[po
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">distortions.visualization</span> <span class="kn">import</span> <span class="n">dplot</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">dplot</span>
 <span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">(</span><span class="s2">"brute"</span><span class="p">,</span> <span class="n">laplacian_method</span><span class="o">=</span><span class="s2">"geometric"</span><span class="p">,</span> <span class="n">affinity_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"radius"</span><span class="p">:</span> <span class="n">radius</span><span class="p">},</span> <span class="n">adjacency_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"n_neighbors"</span><span class="p">:</span> <span class="n">n_neighbors</span><span class="p">},</span> <span class="n">laplacian_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"scaling_epps"</span><span class="p">:</span> <span class="n">radius</span><span class="p">})</span>
 <span class="n">H</span><span class="p">,</span> <span class="n">Hvv</span><span class="p">,</span> <span class="n">Hs</span> <span class="o">=</span> <span class="n">local_distortions</span><span class="p">(</span><span class="n">adata</span><span class="o">.</span><span class="n">obsm</span><span class="p">[</span><span class="s1">'X_DenseUMAP'</span><span class="p">],</span> <span class="n">adata</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">geom</span><span class="p">)</span>
 <span class="n">embedding_test_1</span> <span class="o">=</span> <span class="n">bind_metric</span><span class="p">(</span><span class="n">embedding_umap</span><span class="p">[</span><span class="n">sampled_indices</span><span class="p">],</span> <span class="n">Hvv</span><span class="p">,</span> <span class="n">Hs</span><span class="p">)</span>
@@ -2794,7 +2794,7 @@ kappa_p = alt.Chart(df_kappa).mark_bar(opacity=0.8).encode(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.notebook</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="n">thresholds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
 <span class="n">num_keys</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"UMAP"</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">"DensMAP"</span><span class="p">:</span> <span class="p">[]}</span>
@@ -3006,10 +3006,10 @@ for t in tqdm(thresholds, desc="Calculating neighborhood sizes..."):
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
