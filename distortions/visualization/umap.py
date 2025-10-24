@@ -1,5 +1,4 @@
 import scanpy as sc
-import pandas as pd
 
 def scanpy_umap(adata, max_cells=200, n_neighbors=10, n_pcs=40):
     """

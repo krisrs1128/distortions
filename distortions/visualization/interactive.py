@@ -1,5 +1,6 @@
 import traitlets
 import anywidget
+import pandas as pd
 from pathlib import Path
 from ..geometry import boxplot_data
 
@@ -60,26 +61,27 @@ class dplot(anywidget.AnyWidget):
     _esm = widget_dir / "render.js"
     _mapping = traitlets.Dict().tag(sync=True)
     dataset = traitlets.List().tag(sync=True)
+    corrected = traitlets.List().tag(sync=True)
     layers = traitlets.List().tag(sync=True)
     neighbors = traitlets.List().tag(sync=True)
     distance_summaries = traitlets.List().tag(sync=True)
     outliers = traitlets.List().tag(sync=True)
     options = traitlets.Dict().tag(sync=True)
     elem_svg = traitlets.Unicode().tag(sync=True)
-    
+
     def __init__(self, df, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.dataset = df.to_dict("records")
         self.options = kwargs
-    
+
     def mapping(self, **kwargs):
         """
-        Specify the Mapping 
+        Specify the Mapping
         """
         kwargs = {"angle": "angle", "a": "s1", "b": "s0", **kwargs}
         self._mapping = kwargs
         return self
-    
+
     def geom_ellipse(self, **kwargs):
         self.layers = self.layers + [{"type": "geom_ellipse", "options": kwargs}]
         return self
@@ -128,3 +130,6 @@ class dplot(anywidget.AnyWidget):
         with open(filename, "w") as f:
             f.write(self.elem_svg)
         f.close()
+
+    def correct(self):
+        return pd.DataFrame(self.corrected)

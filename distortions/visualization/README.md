@@ -1,6 +1,6 @@
 
 ## Integrating JS Code
- 
+
  One issue we encountered while developing this code is that the JavaScript is
  more complicated than the typical any widget example, and we don't want
  everything to be included in a single JavaScript file.  Initially, we tried
@@ -28,7 +28,7 @@ running this command:
 npm install ~/Desktop/collaborations/distortions-js
 ```
 
-3. Go to this current directory and then go to render.js to use this new
+3. Go to this current directory (distortions/visualization, *not* distortions or distortions/visualization/widget) and then go to render.js to use this new
 distortions-js package version. You can do the bundling using esbuild. A wiser
 person would put this on their path, but I just refer to the binary directly.
 
