@@ -1,0 +1,25 @@
+---
+title: Swiss Roll Comparison
+---
+
+```{r}
+library(RtsneWithP)
+library(fs)
+library(glue)
+library(neMDBD)
+library(readr)
+```
+
+```{r}
+noise <- 1
+data_dir <- path("distortions/docs/tutorials/data/")
+X <- read_csv(data_dir / "swiss_noise_{noise}.csv") |>
+    as.matrix()
+Y <- read_csv(data_dir / "swiss_noise_{noise}_embedding.csv") |>
+    as.matrix()
+```
+
+```{r}
+pscore <- perturbation_score_compute(X, Y, 100, approx = 2)
+write_csv(pscore, data_dir/glue("pscore_{noise}.csv"))
+```
