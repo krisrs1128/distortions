@@ -33,7 +33,7 @@ function render({ model, el }) {
 
   // render all the layers
   layers.forEach(l => callLayer(plot, l, model))
-  plot.render()
+  plot.render(model)  // Pass model to render so it can be used in layer callbacks
 
   // save if requested
   model.on("msg:custom", msg => {
