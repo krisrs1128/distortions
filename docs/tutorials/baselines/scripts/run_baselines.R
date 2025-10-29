@@ -18,8 +18,8 @@ parse_args <- function(args) {
 }
 
 opts <- parse_args(args)
-noise <- as.numeric(opts$noise)
 data_dir <- opts$data_dir
+noise <- opts$noise
 
 library(tidyverse)
 library(fs)
@@ -28,6 +28,7 @@ library(sleepwalk)
 
 data_csv <- path(data_dir, paste0("swiss_noise_", noise, ".csv"))
 emb_csv  <- path(data_dir, paste0("swiss_noise_", noise, "_embedding.csv"))
+noise <- as.numeric(noise)
 
 message("Reading data from: ", as.character(data_csv))
 X <- as.matrix(read_csv(data_csv))
