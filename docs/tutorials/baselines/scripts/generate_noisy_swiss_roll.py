@@ -37,9 +37,11 @@ def main():
     # compute t-SNE embedding
     tsne = TSNE(n_components=2, perplexity=args.perplexity, random_state=args.random_state, learning_rate="auto")
     X_emb = tsne.fit_transform(X_noisy)
-
     noise_str = str(args.noise)
+
     # save CSVs
+    X_emb = np.hstack([X_emb, t[:, None] ])
+    X_noisy = np.hstack([X_noisy, t[:, None] ])
     pd.DataFrame(X_noisy).to_csv(outdir / f"swiss_noise_{noise_str}.csv", index=False)
     pd.DataFrame(X_emb).to_csv(outdir / f"swiss_noise_{noise_str}_embedding.csv", index=False)
 

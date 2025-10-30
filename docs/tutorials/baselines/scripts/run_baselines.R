@@ -28,15 +28,13 @@ library(sleepwalk)
 
 data_csv <- path(data_dir, paste0("swiss_noise_", noise, ".csv"))
 emb_csv  <- path(data_dir, paste0("swiss_noise_", noise, "_embedding.csv"))
-noise <- as.numeric(noise)
 
 message("Reading data from: ", as.character(data_csv))
-X <- as.matrix(read_csv(data_csv))
-Y <- as.matrix(read_csv(emb_csv))
+X <- as.matrix(read_csv(data_csv)[, 1:3])
+Y <- as.matrix(read_csv(emb_csv)[, 1:2])
 
-# compute perturbation score (MDBD). This call may be slow; adjust parameters as needed.
+# compute perturbation score (MDBD)
 message(sprintf("Computing perturbation score for noise=%s", noise))
-# Let errors propagate so failures are visible during runs
 pscore_val <- perturbation_score_compute(X, Y, 100, approx = 2)
 
 out_pscore <- tibble(score = pscore_val)
@@ -47,5 +45,4 @@ message("Wrote pscore to: ", as.character(pscore_path))
 # produce a Sleepwalk HTML file (embedding vs original distances)
 html_file <- path(data_dir, paste0("swissroll_noise_", noise, ".html"))
 message("Saving sleepwalk html to: ", as.character(html_file))
-# Direct call: allow errors to surface for debugging
 sleepwalk(Y, X, saveToFile = as.character(html_file))

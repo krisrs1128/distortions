@@ -1,7 +1,7 @@
 """
 Snakemake workflow to generate noisy Swiss Roll datasets and run baselines.
 
-This Snakefile loops over noise values 0.0, 0.25, 0.5, 0.75, 1.0.
+This Snakefile loops over noise values 0.0, 0.25, ... 3.
 
 Rules:
  - all: depends on pscore CSV for all noise values
@@ -9,8 +9,7 @@ Rules:
  - baselines: runs the R script which computes pscore and sleepwalk output
 """
 
-NOISES = ["0.0", "0.25", "0.5", "0.75", "1"]
-
+NOISES = ["0.0", "0.25", "0.5", "0.75", "1.0", "1.25", "1.5"]
 DATA_DIR = "data"
 SCRIPTS_DIR = "scripts"
 
