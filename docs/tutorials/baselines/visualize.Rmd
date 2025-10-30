@@ -1,0 +1,48 @@
+---
+title: Visualize Difference in Baselines
+---
+
+```{r}
+library(fs)
+data_dir <- path("data")
+```
+
+```{r}
+# p_score_*.csv
+score_files <- dir_ls(data_dir, recurse = TRUE, glob = "**/pscore_*.csv")
+p_scores <- map_dfr(score_files, \(fp) {
+  read_csv(fp, show_col_types = FALSE) |>
+    mutate(
+      noise_level = as.numeric(str_match(path_file(fp), "pscore_([0-9]+(?:\\.[0-9]+)?)\\.csv$")[, 2]),
+      id = row_number(),
+      .before = 1
+    )
+})
+
+# swiss_noise_*_embedding.csv
+embed_files <- dir_ls(data_dir, recurse = TRUE, glob = "**/swiss_noise_*_embedding.csv")
+embeddings <- map_dfr(embed_files, \(fp) {
+  read_csv(fp, show_col_types = FALSE) |>
+    mutate(
+      noise_level = as.numeric(str_match(path_file(fp), "swiss_noise_([^_]+)_embedding\\.csv$")[, 2]),
+      id = row_number(),
+      .before = 1,
+    )
+})
+```
+
+```{r}
+embeddings |>
+    left_join(p_scores) |>
+    ggplot() +
+    geom_point(
+        aes(
+            `0`, `1`,
+            alpha = score,
+            size = score
+            )
+        ) +
+    scale_size(range = c(0.2, 1.5)) +
+    facet_wrap(~ noise_level)
+
+```
