@@ -15,7 +15,7 @@ SCRIPTS_DIR = "scripts"
 
 rule all:
     input:
-        expand(f"{DATA_DIR}/pscore_{{noise}}.csv", noise=NOISES)
+        expand(f"{DATA_DIR}/swissroll_noise_{{noise}}.html", noise=NOISES)
 
 rule generate:
     output:

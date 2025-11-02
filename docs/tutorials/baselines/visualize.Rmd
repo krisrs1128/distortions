@@ -4,6 +4,9 @@ title: Visualize Difference in Baselines
 
 ```{r}
 library(fs)
+library(scico)
+library(ggridges)
+library(tidyverse)
 data_dir <- path("data")
 ```
 
@@ -32,17 +35,28 @@ embeddings <- map_dfr(embed_files, \(fp) {
 ```
 
 ```{r}
+theme_set(theme_bw())
 embeddings |>
     left_join(p_scores) |>
     ggplot() +
     geom_point(
         aes(
-            `0`, `1`,
-            alpha = score,
+            `0`, `1`, #col = `1`,
+            col = score,
             size = score
             )
         ) +
-    scale_size(range = c(0.2, 1.5)) +
-    facet_wrap(~ noise_level)
+    scale_size(range = c(0.001, .8)) +
+    scale_color_scico(palette = "berlin") +
+    facet_wrap(~ noise_level, nrow = 2)
 
+ggplot(p_scores) +
+    stat_ecdf(aes(log10(score), group = factor(noise_level), col = noise_level)) +
+    scale_color_scico(palette = "glasgow", direction = -1) +
+    scale_x_continuous(limits = c(-1.5, 1.6)) +
+    labs(
+        y = "P(Perturbation Score < t)",
+        x = "Perturbation Score",
+        col = "Noise Level"
+    )
 ```
