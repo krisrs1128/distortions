@@ -3,5 +3,8 @@ dist/
 build/
 *.egg-info/
 docs/tutorials/data
+docs/tutorials/baselines/.snakemake
+docs/tutorials/baselines/data
 site/tutorials/data
 .ipynb_checkpoints
+*DS_Store
