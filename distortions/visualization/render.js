@@ -1,3 +1,8 @@
+// Call distortions-js commands
+//
+// https://www.npmjs.com/package/distortions
+//
+// esbuild --bundle --format=esm --outdir=widget render.js
 import {DistortionPlot} from "distortions";
 import * as d3 from "https://esm.sh/d3@7";
 

@@ -24,9 +24,9 @@ var __toESM = (mod2, isNodeMode, target) => (target = mod2 != null ? __create(__
   mod2
 ));
 
-// ../../../../../../node_modules/svd-js/build-umd/svd-js.min.js
+// ../../../distortions-js/node_modules/svd-js/build-umd/svd-js.min.js
 var require_svd_js_min = __commonJS({
-  "../../../../../../node_modules/svd-js/build-umd/svd-js.min.js"(exports, module) {
+  "../../../distortions-js/node_modules/svd-js/build-umd/svd-js.min.js"(exports, module) {
     !function(r, f) {
       "object" == typeof exports && "undefined" != typeof module ? f(exports) : "function" == typeof define && define.amd ? define(["exports"], f) : f((r = "undefined" != typeof globalThis ? globalThis : r || self).SVDJS = {});
     }(exports, function(r) {
@@ -113,9 +113,9 @@ var require_svd_js_min = __commonJS({
   }
 });
 
-// ../../../../../../node_modules/typed-function/lib/umd/typed-function.js
+// ../../../distortions-js/node_modules/typed-function/lib/umd/typed-function.js
 var require_typed_function = __commonJS({
-  "../../../../../../node_modules/typed-function/lib/umd/typed-function.js"(exports, module) {
+  "../../../distortions-js/node_modules/typed-function/lib/umd/typed-function.js"(exports, module) {
     (function(global, factory2) {
       typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory2() : typeof define === "function" && define.amd ? define(factory2) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, global["'typed'"] = factory2());
     })(exports, function() {
@@ -1316,17 +1316,17 @@ var require_typed_function = __commonJS({
   }
 });
 
-// ../../../../../../node_modules/d3-array/src/ascending.js
+// ../../../distortions-js/node_modules/d3-array/src/ascending.js
 function ascending(a, b) {
   return a == null || b == null ? NaN : a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
 }
 
-// ../../../../../../node_modules/d3-array/src/descending.js
+// ../../../distortions-js/node_modules/d3-array/src/descending.js
 function descending(a, b) {
   return a == null || b == null ? NaN : b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
 }
 
-// ../../../../../../node_modules/d3-array/src/bisector.js
+// ../../../distortions-js/node_modules/d3-array/src/bisector.js
 function bisector(f) {
   let compare1, compare2, delta;
   if (f.length !== 2) {
@@ -1370,19 +1370,19 @@ function zero() {
   return 0;
 }
 
-// ../../../../../../node_modules/d3-array/src/number.js
+// ../../../distortions-js/node_modules/d3-array/src/number.js
 function number(x) {
   return x === null ? NaN : +x;
 }
 
-// ../../../../../../node_modules/d3-array/src/bisect.js
+// ../../../distortions-js/node_modules/d3-array/src/bisect.js
 var ascendingBisect = bisector(ascending);
 var bisectRight = ascendingBisect.right;
 var bisectLeft = ascendingBisect.left;
 var bisectCenter = bisector(number).center;
 var bisect_default = bisectRight;
 
-// ../../../../../../node_modules/d3-array/src/extent.js
+// ../../../distortions-js/node_modules/d3-array/src/extent.js
 function extent(values, valueof) {
   let min3;
   let max4;
@@ -1413,7 +1413,7 @@ function extent(values, valueof) {
   return [min3, max4];
 }
 
-// ../../../../../../node_modules/internmap/src/index.js
+// ../../../distortions-js/node_modules/internmap/src/index.js
 var InternMap = class extends Map {
   constructor(entries, key = keyof) {
     super();
@@ -1455,7 +1455,7 @@ function keyof(value) {
   return value !== null && typeof value === "object" ? value.valueOf() : value;
 }
 
-// ../../../../../../node_modules/d3-array/src/ticks.js
+// ../../../distortions-js/node_modules/d3-array/src/ticks.js
 var e10 = Math.sqrt(50);
 var e5 = Math.sqrt(10);
 var e2 = Math.sqrt(2);
@@ -1505,7 +1505,7 @@ function tickStep(start2, stop, count) {
   return (reverse ? -1 : 1) * (inc < 0 ? 1 / -inc : inc);
 }
 
-// ../../../../../../node_modules/d3-array/src/max.js
+// ../../../distortions-js/node_modules/d3-array/src/max.js
 function max(values, valueof) {
   let max4;
   if (valueof === void 0) {
@@ -1525,7 +1525,7 @@ function max(values, valueof) {
   return max4;
 }
 
-// ../../../../../../node_modules/d3-array/src/range.js
+// ../../../distortions-js/node_modules/d3-array/src/range.js
 function range(start2, stop, step) {
   start2 = +start2, stop = +stop, step = (n = arguments.length) < 2 ? (stop = start2, start2 = 0, 1) : n < 3 ? 1 : +step;
   var i = -1, n = Math.max(0, Math.ceil((stop - start2) / step)) | 0, range2 = new Array(n);
@@ -1535,7 +1535,7 @@ function range(start2, stop, step) {
   return range2;
 }
 
-// ../../../../../../node_modules/d3-array/src/sum.js
+// ../../../distortions-js/node_modules/d3-array/src/sum.js
 function sum(values, valueof) {
   let sum3 = 0;
   if (valueof === void 0) {
@@ -1555,12 +1555,12 @@ function sum(values, valueof) {
   return sum3;
 }
 
-// ../../../../../../node_modules/d3-axis/src/identity.js
+// ../../../distortions-js/node_modules/d3-axis/src/identity.js
 function identity_default(x) {
   return x;
 }
 
-// ../../../../../../node_modules/d3-axis/src/axis.js
+// ../../../distortions-js/node_modules/d3-axis/src/axis.js
 var top = 1;
 var right = 2;
 var bottom = 3;
@@ -1655,7 +1655,7 @@ function axisLeft(scale) {
   return axis(left, scale);
 }
 
-// ../../../../../../node_modules/d3-dispatch/src/dispatch.js
+// ../../../distortions-js/node_modules/d3-dispatch/src/dispatch.js
 var noop = { value: () => {
 } };
 function dispatch() {
@@ -1725,7 +1725,7 @@ function set(type2, name43, callback) {
 }
 var dispatch_default = dispatch;
 
-// ../../../../../../node_modules/d3-selection/src/namespaces.js
+// ../../../distortions-js/node_modules/d3-selection/src/namespaces.js
 var xhtml = "http://www.w3.org/1999/xhtml";
 var namespaces_default = {
   svg: "http://www.w3.org/2000/svg",
@@ -1735,14 +1735,14 @@ var namespaces_default = {
   xmlns: "http://www.w3.org/2000/xmlns/"
 };
 
-// ../../../../../../node_modules/d3-selection/src/namespace.js
+// ../../../distortions-js/node_modules/d3-selection/src/namespace.js
 function namespace_default(name43) {
   var prefix = name43 += "", i = prefix.indexOf(":");
   if (i >= 0 && (prefix = name43.slice(0, i)) !== "xmlns") name43 = name43.slice(i + 1);
   return namespaces_default.hasOwnProperty(prefix) ? { space: namespaces_default[prefix], local: name43 } : name43;
 }
 
-// ../../../../../../node_modules/d3-selection/src/creator.js
+// ../../../distortions-js/node_modules/d3-selection/src/creator.js
 function creatorInherit(name43) {
   return function() {
     var document2 = this.ownerDocument, uri = this.namespaceURI;
@@ -1759,7 +1759,7 @@ function creator_default(name43) {
   return (fullname.local ? creatorFixed : creatorInherit)(fullname);
 }
 
-// ../../../../../../node_modules/d3-selection/src/selector.js
+// ../../../distortions-js/node_modules/d3-selection/src/selector.js
 function none() {
 }
 function selector_default(selector) {
@@ -1768,7 +1768,7 @@ function selector_default(selector) {
   };
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/select.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/select.js
 function select_default(select2) {
   if (typeof select2 !== "function") select2 = selector_default(select2);
   for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0; j < m; ++j) {
@@ -1782,12 +1782,12 @@ function select_default(select2) {
   return new Selection(subgroups, this._parents);
 }
 
-// ../../../../../../node_modules/d3-selection/src/array.js
+// ../../../distortions-js/node_modules/d3-selection/src/array.js
 function array(x) {
   return x == null ? [] : Array.isArray(x) ? x : Array.from(x);
 }
 
-// ../../../../../../node_modules/d3-selection/src/selectorAll.js
+// ../../../distortions-js/node_modules/d3-selection/src/selectorAll.js
 function empty() {
   return [];
 }
@@ -1797,7 +1797,7 @@ function selectorAll_default(selector) {
   };
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/selectAll.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/selectAll.js
 function arrayAll(select2) {
   return function() {
     return array(select2.apply(this, arguments));
@@ -1817,7 +1817,7 @@ function selectAll_default(select2) {
   return new Selection(subgroups, parents);
 }
 
-// ../../../../../../node_modules/d3-selection/src/matcher.js
+// ../../../distortions-js/node_modules/d3-selection/src/matcher.js
 function matcher_default(selector) {
   return function() {
     return this.matches(selector);
@@ -1829,7 +1829,7 @@ function childMatcher(selector) {
   };
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/selectChild.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/selectChild.js
 var find = Array.prototype.find;
 function childFind(match) {
   return function() {
@@ -1843,7 +1843,7 @@ function selectChild_default(match) {
   return this.select(match == null ? childFirst : childFind(typeof match === "function" ? match : childMatcher(match)));
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/selectChildren.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/selectChildren.js
 var filter = Array.prototype.filter;
 function children() {
   return Array.from(this.children);
@@ -1857,7 +1857,7 @@ function selectChildren_default(match) {
   return this.selectAll(match == null ? children : childrenFilter(typeof match === "function" ? match : childMatcher(match)));
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/filter.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/filter.js
 function filter_default(match) {
   if (typeof match !== "function") match = matcher_default(match);
   for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0; j < m; ++j) {
@@ -1870,12 +1870,12 @@ function filter_default(match) {
   return new Selection(subgroups, this._parents);
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/sparse.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/sparse.js
 function sparse_default(update) {
   return new Array(update.length);
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/enter.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/enter.js
 function enter_default() {
   return new Selection(this._enter || this._groups.map(sparse_default), this._parents);
 }
@@ -1902,14 +1902,14 @@ EnterNode.prototype = {
   }
 };
 
-// ../../../../../../node_modules/d3-selection/src/constant.js
+// ../../../distortions-js/node_modules/d3-selection/src/constant.js
 function constant_default(x) {
   return function() {
     return x;
   };
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/data.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/data.js
 function bindIndex(parent, group, enter, update, exit, data) {
   var i = 0, node, groupLength = group.length, dataLength = data.length;
   for (; i < dataLength; ++i) {
@@ -1981,12 +1981,12 @@ function arraylike(data) {
   return typeof data === "object" && "length" in data ? data : Array.from(data);
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/exit.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/exit.js
 function exit_default() {
   return new Selection(this._exit || this._groups.map(sparse_default), this._parents);
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/join.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/join.js
 function join_default(onenter, onupdate, onexit) {
   var enter = this.enter(), update = this, exit = this.exit();
   if (typeof onenter === "function") {
@@ -2004,7 +2004,7 @@ function join_default(onenter, onupdate, onexit) {
   return enter && update ? enter.merge(update).order() : update;
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/merge.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/merge.js
 function merge_default(context) {
   var selection2 = context.selection ? context.selection() : context;
   for (var groups0 = this._groups, groups1 = selection2._groups, m0 = groups0.length, m1 = groups1.length, m = Math.min(m0, m1), merges = new Array(m0), j = 0; j < m; ++j) {
@@ -2020,7 +2020,7 @@ function merge_default(context) {
   return new Selection(merges, this._parents);
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/order.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/order.js
 function order_default() {
   for (var groups = this._groups, j = -1, m = groups.length; ++j < m; ) {
     for (var group = groups[j], i = group.length - 1, next = group[i], node; --i >= 0; ) {
@@ -2033,7 +2033,7 @@ function order_default() {
   return this;
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/sort.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/sort.js
 function sort_default(compare) {
   if (!compare) compare = ascending2;
   function compareNode(a, b) {
@@ -2053,7 +2053,7 @@ function ascending2(a, b) {
   return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/call.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/call.js
 function call_default() {
   var callback = arguments[0];
   arguments[0] = this;
@@ -2061,12 +2061,12 @@ function call_default() {
   return this;
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/nodes.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/nodes.js
 function nodes_default() {
   return Array.from(this);
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/node.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/node.js
 function node_default() {
   for (var groups = this._groups, j = 0, m = groups.length; j < m; ++j) {
     for (var group = groups[j], i = 0, n = group.length; i < n; ++i) {
@@ -2077,19 +2077,19 @@ function node_default() {
   return null;
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/size.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/size.js
 function size_default() {
   let size2 = 0;
   for (const node of this) ++size2;
   return size2;
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/empty.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/empty.js
 function empty_default() {
   return !this.node();
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/each.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/each.js
 function each_default(callback) {
   for (var groups = this._groups, j = 0, m = groups.length; j < m; ++j) {
     for (var group = groups[j], i = 0, n = group.length, node; i < n; ++i) {
@@ -2099,7 +2099,7 @@ function each_default(callback) {
   return this;
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/attr.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/attr.js
 function attrRemove(name43) {
   return function() {
     this.removeAttribute(name43);
@@ -2143,12 +2143,12 @@ function attr_default(name43, value) {
   return this.each((value == null ? fullname.local ? attrRemoveNS : attrRemove : typeof value === "function" ? fullname.local ? attrFunctionNS : attrFunction : fullname.local ? attrConstantNS : attrConstant)(fullname, value));
 }
 
-// ../../../../../../node_modules/d3-selection/src/window.js
+// ../../../distortions-js/node_modules/d3-selection/src/window.js
 function window_default(node) {
   return node.ownerDocument && node.ownerDocument.defaultView || node.document && node || node.defaultView;
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/style.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/style.js
 function styleRemove(name43) {
   return function() {
     this.style.removeProperty(name43);
@@ -2173,7 +2173,7 @@ function styleValue(node, name43) {
   return node.style.getPropertyValue(name43) || window_default(node).getComputedStyle(node, null).getPropertyValue(name43);
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/property.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/property.js
 function propertyRemove(name43) {
   return function() {
     delete this[name43];
@@ -2195,7 +2195,7 @@ function property_default(name43, value) {
   return arguments.length > 1 ? this.each((value == null ? propertyRemove : typeof value === "function" ? propertyFunction : propertyConstant)(name43, value)) : this.node()[name43];
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/classed.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/classed.js
 function classArray(string) {
   return string.trim().split(/^|\s+/);
 }
@@ -2258,7 +2258,7 @@ function classed_default(name43, value) {
   return this.each((typeof value === "function" ? classedFunction : value ? classedTrue : classedFalse)(names, value));
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/text.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/text.js
 function textRemove() {
   this.textContent = "";
 }
@@ -2277,7 +2277,7 @@ function text_default(value) {
   return arguments.length ? this.each(value == null ? textRemove : (typeof value === "function" ? textFunction : textConstant)(value)) : this.node().textContent;
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/html.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/html.js
 function htmlRemove() {
   this.innerHTML = "";
 }
@@ -2296,7 +2296,7 @@ function html_default(value) {
   return arguments.length ? this.each(value == null ? htmlRemove : (typeof value === "function" ? htmlFunction : htmlConstant)(value)) : this.node().innerHTML;
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/raise.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/raise.js
 function raise() {
   if (this.nextSibling) this.parentNode.appendChild(this);
 }
@@ -2304,7 +2304,7 @@ function raise_default() {
   return this.each(raise);
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/lower.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/lower.js
 function lower() {
   if (this.previousSibling) this.parentNode.insertBefore(this, this.parentNode.firstChild);
 }
@@ -2312,7 +2312,7 @@ function lower_default() {
   return this.each(lower);
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/append.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/append.js
 function append_default(name43) {
   var create2 = typeof name43 === "function" ? name43 : creator_default(name43);
   return this.select(function() {
@@ -2320,7 +2320,7 @@ function append_default(name43) {
   });
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/insert.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/insert.js
 function constantNull() {
   return null;
 }
@@ -2331,7 +2331,7 @@ function insert_default(name43, before) {
   });
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/remove.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/remove.js
 function remove() {
   var parent = this.parentNode;
   if (parent) parent.removeChild(this);
@@ -2340,7 +2340,7 @@ function remove_default() {
   return this.each(remove);
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/clone.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/clone.js
 function selection_cloneShallow() {
   var clone4 = this.cloneNode(false), parent = this.parentNode;
   return parent ? parent.insertBefore(clone4, this.nextSibling) : clone4;
@@ -2353,12 +2353,12 @@ function clone_default(deep) {
   return this.select(deep ? selection_cloneDeep : selection_cloneShallow);
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/datum.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/datum.js
 function datum_default(value) {
   return arguments.length ? this.property("__data__", value) : this.node().__data__;
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/on.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/on.js
 function contextListener(listener) {
   return function(event) {
     listener.call(this, event, this.__data__);
@@ -2421,7 +2421,7 @@ function on_default(typename, value, options) {
   return this;
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/dispatch.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/dispatch.js
 function dispatchEvent(node, type2, params) {
   var window2 = window_default(node), event = window2.CustomEvent;
   if (typeof event === "function") {
@@ -2447,7 +2447,7 @@ function dispatch_default2(type2, params) {
   return this.each((typeof params === "function" ? dispatchFunction : dispatchConstant)(type2, params));
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/iterator.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/iterator.js
 function* iterator_default() {
   for (var groups = this._groups, j = 0, m = groups.length; j < m; ++j) {
     for (var group = groups[j], i = 0, n = group.length, node; i < n; ++i) {
@@ -2456,7 +2456,7 @@ function* iterator_default() {
   }
 }
 
-// ../../../../../../node_modules/d3-selection/src/selection/index.js
+// ../../../distortions-js/node_modules/d3-selection/src/selection/index.js
 var root = [null];
 function Selection(groups, parents) {
   this._groups = groups;
@@ -2508,24 +2508,24 @@ Selection.prototype = selection.prototype = {
 };
 var selection_default = selection;
 
-// ../../../../../../node_modules/d3-selection/src/select.js
+// ../../../distortions-js/node_modules/d3-selection/src/select.js
 function select_default2(selector) {
   return typeof selector === "string" ? new Selection([[document.querySelector(selector)]], [document.documentElement]) : new Selection([[selector]], root);
 }
 
-// ../../../../../../node_modules/d3-selection/src/create.js
+// ../../../distortions-js/node_modules/d3-selection/src/create.js
 function create_default(name43) {
   return select_default2(creator_default(name43).call(document.documentElement));
 }
 
-// ../../../../../../node_modules/d3-selection/src/sourceEvent.js
+// ../../../distortions-js/node_modules/d3-selection/src/sourceEvent.js
 function sourceEvent_default(event) {
   let sourceEvent;
   while (sourceEvent = event.sourceEvent) event = sourceEvent;
   return event;
 }
 
-// ../../../../../../node_modules/d3-selection/src/pointer.js
+// ../../../distortions-js/node_modules/d3-selection/src/pointer.js
 function pointer_default(event, node) {
   event = sourceEvent_default(event);
   if (node === void 0) node = event.currentTarget;
@@ -2545,14 +2545,14 @@ function pointer_default(event, node) {
   return [event.pageX, event.pageY];
 }
 
-// ../../../../../../node_modules/d3-drag/src/noevent.js
+// ../../../distortions-js/node_modules/d3-drag/src/noevent.js
 var nonpassivecapture = { capture: true, passive: false };
 function noevent_default(event) {
   event.preventDefault();
   event.stopImmediatePropagation();
 }
 
-// ../../../../../../node_modules/d3-drag/src/nodrag.js
+// ../../../distortions-js/node_modules/d3-drag/src/nodrag.js
 function nodrag_default(view) {
   var root2 = view.document.documentElement, selection2 = select_default2(view).on("dragstart.drag", noevent_default, nonpassivecapture);
   if ("onselectstart" in root2) {
@@ -2578,7 +2578,7 @@ function yesdrag(view, noclick) {
   }
 }
 
-// ../../../../../../node_modules/d3-color/src/define.js
+// ../../../distortions-js/node_modules/d3-color/src/define.js
 function define_default(constructor, factory2, prototype) {
   constructor.prototype = factory2.prototype = prototype;
   prototype.constructor = constructor;
@@ -2589,7 +2589,7 @@ function extend(parent, definition) {
   return prototype;
 }
 
-// ../../../../../../node_modules/d3-color/src/color.js
+// ../../../distortions-js/node_modules/d3-color/src/color.js
 function Color() {
 }
 var darker = 0.7;
@@ -2926,7 +2926,7 @@ function hsl2rgb(h, m1, m2) {
   return (h < 60 ? m1 + (m2 - m1) * h / 60 : h < 180 ? m2 : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60 : m1) * 255;
 }
 
-// ../../../../../../node_modules/d3-interpolate/src/basis.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/basis.js
 function basis(t1, v0, v1, v2, v3) {
   var t2 = t1 * t1, t3 = t2 * t1;
   return ((1 - 3 * t1 + 3 * t2 - t3) * v0 + (4 - 6 * t2 + 3 * t3) * v1 + (1 + 3 * t1 + 3 * t2 - 3 * t3) * v2 + t3 * v3) / 6;
@@ -2939,7 +2939,7 @@ function basis_default(values) {
   };
 }
 
-// ../../../../../../node_modules/d3-interpolate/src/basisClosed.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/basisClosed.js
 function basisClosed_default(values) {
   var n = values.length;
   return function(t) {
@@ -2948,10 +2948,10 @@ function basisClosed_default(values) {
   };
 }
 
-// ../../../../../../node_modules/d3-interpolate/src/constant.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/constant.js
 var constant_default2 = (x) => () => x;
 
-// ../../../../../../node_modules/d3-interpolate/src/color.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/color.js
 function linear(a, d) {
   return function(t) {
     return a + t * d;
@@ -2972,7 +2972,7 @@ function nogamma(a, b) {
   return d ? linear(a, d) : constant_default2(isNaN(a) ? b : a);
 }
 
-// ../../../../../../node_modules/d3-interpolate/src/rgb.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/rgb.js
 var rgb_default = function rgbGamma(y) {
   var color2 = gamma(y);
   function rgb2(start2, end) {
@@ -3012,7 +3012,7 @@ function rgbSpline(spline) {
 var rgbBasis = rgbSpline(basis_default);
 var rgbBasisClosed = rgbSpline(basisClosed_default);
 
-// ../../../../../../node_modules/d3-interpolate/src/numberArray.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/numberArray.js
 function numberArray_default(a, b) {
   if (!b) b = [];
   var n = a ? Math.min(b.length, a.length) : 0, c = b.slice(), i;
@@ -3025,7 +3025,7 @@ function isNumberArray(x) {
   return ArrayBuffer.isView(x) && !(x instanceof DataView);
 }
 
-// ../../../../../../node_modules/d3-interpolate/src/array.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/array.js
 function genericArray(a, b) {
   var nb = b ? b.length : 0, na = a ? Math.min(nb, a.length) : 0, x = new Array(na), c = new Array(nb), i;
   for (i = 0; i < na; ++i) x[i] = value_default(a[i], b[i]);
@@ -3036,7 +3036,7 @@ function genericArray(a, b) {
   };
 }
 
-// ../../../../../../node_modules/d3-interpolate/src/date.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/date.js
 function date_default(a, b) {
   var d = /* @__PURE__ */ new Date();
   return a = +a, b = +b, function(t) {
@@ -3044,14 +3044,14 @@ function date_default(a, b) {
   };
 }
 
-// ../../../../../../node_modules/d3-interpolate/src/number.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/number.js
 function number_default(a, b) {
   return a = +a, b = +b, function(t) {
     return a * (1 - t) + b * t;
   };
 }
 
-// ../../../../../../node_modules/d3-interpolate/src/object.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/object.js
 function object_default(a, b) {
   var i = {}, c = {}, k;
   if (a === null || typeof a !== "object") a = {};
@@ -3069,7 +3069,7 @@ function object_default(a, b) {
   };
 }
 
-// ../../../../../../node_modules/d3-interpolate/src/string.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/string.js
 var reA = /[-+]?(?:\d+\.?\d*|\.?\d+)(?:[eE][-+]?\d+)?/g;
 var reB = new RegExp(reA.source, "g");
 function zero2(b) {
@@ -3111,20 +3111,20 @@ function string_default(a, b) {
   });
 }
 
-// ../../../../../../node_modules/d3-interpolate/src/value.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/value.js
 function value_default(a, b) {
   var t = typeof b, c;
   return b == null || t === "boolean" ? constant_default2(b) : (t === "number" ? number_default : t === "string" ? (c = color(b)) ? (b = c, rgb_default) : string_default : b instanceof color ? rgb_default : b instanceof Date ? date_default : isNumberArray(b) ? numberArray_default : Array.isArray(b) ? genericArray : typeof b.valueOf !== "function" && typeof b.toString !== "function" || isNaN(b) ? object_default : number_default)(a, b);
 }
 
-// ../../../../../../node_modules/d3-interpolate/src/round.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/round.js
 function round_default(a, b) {
   return a = +a, b = +b, function(t) {
     return Math.round(a * (1 - t) + b * t);
   };
 }
 
-// ../../../../../../node_modules/d3-interpolate/src/transform/decompose.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/transform/decompose.js
 var degrees = 180 / Math.PI;
 var identity = {
   translateX: 0,
@@ -3150,7 +3150,7 @@ function decompose_default(a, b, c, d, e, f) {
   };
 }
 
-// ../../../../../../node_modules/d3-interpolate/src/transform/parse.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/transform/parse.js
 var svgNode;
 function parseCss(value) {
   const m = new (typeof DOMMatrix === "function" ? DOMMatrix : WebKitCSSMatrix)(value + "");
@@ -3165,7 +3165,7 @@ function parseSvg(value) {
   return decompose_default(value.a, value.b, value.c, value.d, value.e, value.f);
 }
 
-// ../../../../../../node_modules/d3-interpolate/src/transform/index.js
+// ../../../distortions-js/node_modules/d3-interpolate/src/transform/index.js
 function interpolateTransform(parse3, pxComma, pxParen, degParen) {
   function pop(s) {
     return s.length ? s.pop() + " " : "";
@@ -3220,7 +3220,7 @@ function interpolateTransform(parse3, pxComma, pxParen, degParen) {
 var interpolateTransformCss = interpolateTransform(parseCss, "px, ", "px)", "deg)");
 var interpolateTransformSvg = interpolateTransform(parseSvg, ", ", ")", ")");
 
-// ../../../../../../node_modules/d3-timer/src/timer.js
+// ../../../distortions-js/node_modules/d3-timer/src/timer.js
 var frame = 0;
 var timeout = 0;
 var interval = 0;
@@ -3322,7 +3322,7 @@ function sleep(time) {
   }
 }
 
-// ../../../../../../node_modules/d3-timer/src/timeout.js
+// ../../../distortions-js/node_modules/d3-timer/src/timeout.js
 function timeout_default(callback, delay, time) {
   var t = new Timer();
   delay = delay == null ? 0 : +delay;
@@ -3333,7 +3333,7 @@ function timeout_default(callback, delay, time) {
   return t;
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/schedule.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/schedule.js
 var emptyOn = dispatch_default("start", "end", "cancel", "interrupt");
 var emptyTween = [];
 var CREATED = 0;
@@ -3444,7 +3444,7 @@ function create(node, id2, self2) {
   }
 }
 
-// ../../../../../../node_modules/d3-transition/src/interrupt.js
+// ../../../distortions-js/node_modules/d3-transition/src/interrupt.js
 function interrupt_default(node, name43) {
   var schedules = node.__transition, schedule, active, empty3 = true, i;
   if (!schedules) return;
@@ -3463,14 +3463,14 @@ function interrupt_default(node, name43) {
   if (empty3) delete node.__transition;
 }
 
-// ../../../../../../node_modules/d3-transition/src/selection/interrupt.js
+// ../../../distortions-js/node_modules/d3-transition/src/selection/interrupt.js
 function interrupt_default2(name43) {
   return this.each(function() {
     interrupt_default(this, name43);
   });
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/tween.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/tween.js
 function tweenRemove(id2, name43) {
   var tween0, tween1;
   return function() {
@@ -3531,13 +3531,13 @@ function tweenValue(transition2, name43, value) {
   };
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/interpolate.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/interpolate.js
 function interpolate_default(a, b) {
   var c;
   return (typeof b === "number" ? number_default : b instanceof color ? rgb_default : (c = color(b)) ? (b = c, rgb_default) : string_default)(a, b);
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/attr.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/attr.js
 function attrRemove2(name43) {
   return function() {
     this.removeAttribute(name43);
@@ -3587,7 +3587,7 @@ function attr_default2(name43, value) {
   return this.attrTween(name43, typeof value === "function" ? (fullname.local ? attrFunctionNS2 : attrFunction2)(fullname, i, tweenValue(this, "attr." + name43, value)) : value == null ? (fullname.local ? attrRemoveNS2 : attrRemove2)(fullname) : (fullname.local ? attrConstantNS2 : attrConstant2)(fullname, i, value));
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/attrTween.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/attrTween.js
 function attrInterpolate(name43, i) {
   return function(t) {
     this.setAttribute(name43, i.call(this, t));
@@ -3627,7 +3627,7 @@ function attrTween_default(name43, value) {
   return this.tween(key, (fullname.local ? attrTweenNS : attrTween)(fullname, value));
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/delay.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/delay.js
 function delayFunction(id2, value) {
   return function() {
     init(this, id2).delay = +value.apply(this, arguments);
@@ -3643,7 +3643,7 @@ function delay_default(value) {
   return arguments.length ? this.each((typeof value === "function" ? delayFunction : delayConstant)(id2, value)) : get2(this.node(), id2).delay;
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/duration.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/duration.js
 function durationFunction(id2, value) {
   return function() {
     set2(this, id2).duration = +value.apply(this, arguments);
@@ -3659,7 +3659,7 @@ function duration_default(value) {
   return arguments.length ? this.each((typeof value === "function" ? durationFunction : durationConstant)(id2, value)) : get2(this.node(), id2).duration;
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/ease.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/ease.js
 function easeConstant(id2, value) {
   if (typeof value !== "function") throw new Error();
   return function() {
@@ -3671,7 +3671,7 @@ function ease_default(value) {
   return arguments.length ? this.each(easeConstant(id2, value)) : get2(this.node(), id2).ease;
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/easeVarying.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/easeVarying.js
 function easeVarying(id2, value) {
   return function() {
     var v = value.apply(this, arguments);
@@ -3684,7 +3684,7 @@ function easeVarying_default(value) {
   return this.each(easeVarying(this._id, value));
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/filter.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/filter.js
 function filter_default2(match) {
   if (typeof match !== "function") match = matcher_default(match);
   for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0; j < m; ++j) {
@@ -3697,7 +3697,7 @@ function filter_default2(match) {
   return new Transition(subgroups, this._parents, this._name, this._id);
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/merge.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/merge.js
 function merge_default2(transition2) {
   if (transition2._id !== this._id) throw new Error();
   for (var groups0 = this._groups, groups1 = transition2._groups, m0 = groups0.length, m1 = groups1.length, m = Math.min(m0, m1), merges = new Array(m0), j = 0; j < m; ++j) {
@@ -3713,7 +3713,7 @@ function merge_default2(transition2) {
   return new Transition(merges, this._parents, this._name, this._id);
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/on.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/on.js
 function start(name43) {
   return (name43 + "").trim().split(/^|\s+/).every(function(t) {
     var i = t.indexOf(".");
@@ -3734,7 +3734,7 @@ function on_default2(name43, listener) {
   return arguments.length < 2 ? get2(this.node(), id2).on.on(name43) : this.each(onFunction(id2, name43, listener));
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/remove.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/remove.js
 function removeFunction(id2) {
   return function() {
     var parent = this.parentNode;
@@ -3746,7 +3746,7 @@ function remove_default2() {
   return this.on("end.remove", removeFunction(this._id));
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/select.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/select.js
 function select_default3(select2) {
   var name43 = this._name, id2 = this._id;
   if (typeof select2 !== "function") select2 = selector_default(select2);
@@ -3762,7 +3762,7 @@ function select_default3(select2) {
   return new Transition(subgroups, this._parents, name43, id2);
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/selectAll.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/selectAll.js
 function selectAll_default2(select2) {
   var name43 = this._name, id2 = this._id;
   if (typeof select2 !== "function") select2 = selectorAll_default(select2);
@@ -3782,13 +3782,13 @@ function selectAll_default2(select2) {
   return new Transition(subgroups, parents, name43, id2);
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/selection.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/selection.js
 var Selection2 = selection_default.prototype.constructor;
 function selection_default2() {
   return new Selection2(this._groups, this._parents);
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/style.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/style.js
 function styleNull(name43, interpolate) {
   var string00, string10, interpolate0;
   return function() {
@@ -3829,7 +3829,7 @@ function style_default2(name43, value, priority) {
   return value == null ? this.styleTween(name43, styleNull(name43, i)).on("end.style." + name43, styleRemove2(name43)) : typeof value === "function" ? this.styleTween(name43, styleFunction2(name43, i, tweenValue(this, "style." + name43, value))).each(styleMaybeRemove(this._id, name43)) : this.styleTween(name43, styleConstant2(name43, i, value), priority).on("end.style." + name43, null);
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/styleTween.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/styleTween.js
 function styleInterpolate(name43, i, priority) {
   return function(t) {
     this.style.setProperty(name43, i.call(this, t), priority);
@@ -3853,7 +3853,7 @@ function styleTween_default(name43, value, priority) {
   return this.tween(key, styleTween(name43, value, priority == null ? "" : priority));
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/text.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/text.js
 function textConstant2(value) {
   return function() {
     this.textContent = value;
@@ -3869,7 +3869,7 @@ function text_default2(value) {
   return this.tween("text", typeof value === "function" ? textFunction2(tweenValue(this, "text", value)) : textConstant2(value == null ? "" : value + ""));
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/textTween.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/textTween.js
 function textInterpolate(i) {
   return function(t) {
     this.textContent = i.call(this, t);
@@ -3893,7 +3893,7 @@ function textTween_default(value) {
   return this.tween(key, textTween(value));
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/transition.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/transition.js
 function transition_default() {
   var name43 = this._name, id0 = this._id, id1 = newId();
   for (var groups = this._groups, m = groups.length, j = 0; j < m; ++j) {
@@ -3912,7 +3912,7 @@ function transition_default() {
   return new Transition(groups, this._parents, name43, id1);
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/end.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/end.js
 function end_default() {
   var on0, on1, that = this, id2 = that._id, size2 = that.size();
   return new Promise(function(resolve, reject) {
@@ -3933,7 +3933,7 @@ function end_default() {
   });
 }
 
-// ../../../../../../node_modules/d3-transition/src/transition/index.js
+// ../../../distortions-js/node_modules/d3-transition/src/transition/index.js
 var id = 0;
 function Transition(groups, parents, name43, id2) {
   this._groups = groups;
@@ -3981,12 +3981,12 @@ Transition.prototype = transition.prototype = {
   [Symbol.iterator]: selection_prototype[Symbol.iterator]
 };
 
-// ../../../../../../node_modules/d3-ease/src/cubic.js
+// ../../../distortions-js/node_modules/d3-ease/src/cubic.js
 function cubicInOut(t) {
   return ((t *= 2) <= 1 ? t * t * t : (t -= 2) * t * t + 2) / 2;
 }
 
-// ../../../../../../node_modules/d3-transition/src/selection/transition.js
+// ../../../distortions-js/node_modules/d3-transition/src/selection/transition.js
 var defaultTiming = {
   time: null,
   // Set on use.
@@ -4020,14 +4020,14 @@ function transition_default2(name43) {
   return new Transition(groups, this._parents, name43, id2);
 }
 
-// ../../../../../../node_modules/d3-transition/src/selection/index.js
+// ../../../distortions-js/node_modules/d3-transition/src/selection/index.js
 selection_default.prototype.interrupt = interrupt_default2;
 selection_default.prototype.transition = transition_default2;
 
-// ../../../../../../node_modules/d3-brush/src/constant.js
+// ../../../distortions-js/node_modules/d3-brush/src/constant.js
 var constant_default3 = (x) => () => x;
 
-// ../../../../../../node_modules/d3-brush/src/event.js
+// ../../../distortions-js/node_modules/d3-brush/src/event.js
 function BrushEvent(type2, {
   sourceEvent,
   target,
@@ -4045,7 +4045,7 @@ function BrushEvent(type2, {
   });
 }
 
-// ../../../../../../node_modules/d3-brush/src/noevent.js
+// ../../../distortions-js/node_modules/d3-brush/src/noevent.js
 function nopropagation(event) {
   event.stopImmediatePropagation();
 }
@@ -4054,7 +4054,7 @@ function noevent_default2(event) {
   event.stopImmediatePropagation();
 }
 
-// ../../../../../../node_modules/d3-brush/src/brush.js
+// ../../../distortions-js/node_modules/d3-brush/src/brush.js
 var MODE_DRAG = { name: "drag" };
 var MODE_SPACE = { name: "space" };
 var MODE_HANDLE = { name: "handle" };
@@ -4527,7 +4527,7 @@ function brush(dim) {
   return brush2;
 }
 
-// ../../../../../../node_modules/d3-format/src/formatDecimal.js
+// ../../../distortions-js/node_modules/d3-format/src/formatDecimal.js
 function formatDecimal_default(x) {
   return Math.abs(x = Math.round(x)) >= 1e21 ? x.toLocaleString("en").replace(/,/g, "") : x.toString(10);
 }
@@ -4540,12 +4540,12 @@ function formatDecimalParts(x, p) {
   ];
 }
 
-// ../../../../../../node_modules/d3-format/src/exponent.js
+// ../../../distortions-js/node_modules/d3-format/src/exponent.js
 function exponent_default(x) {
   return x = formatDecimalParts(Math.abs(x)), x ? x[1] : NaN;
 }
 
-// ../../../../../../node_modules/d3-format/src/formatGroup.js
+// ../../../distortions-js/node_modules/d3-format/src/formatGroup.js
 function formatGroup_default(grouping, thousands) {
   return function(value, width) {
     var i = value.length, t = [], j = 0, g = grouping[0], length = 0;
@@ -4559,7 +4559,7 @@ function formatGroup_default(grouping, thousands) {
   };
 }
 
-// ../../../../../../node_modules/d3-format/src/formatNumerals.js
+// ../../../distortions-js/node_modules/d3-format/src/formatNumerals.js
 function formatNumerals_default(numerals) {
   return function(value) {
     return value.replace(/[0-9]/g, function(i) {
@@ -4568,7 +4568,7 @@ function formatNumerals_default(numerals) {
   };
 }
 
-// ../../../../../../node_modules/d3-format/src/formatSpecifier.js
+// ../../../distortions-js/node_modules/d3-format/src/formatSpecifier.js
 var re = /^(?:(.)?([<>=^]))?([+\-( ])?([$#])?(0)?(\d+)?(,)?(\.\d+)?(~)?([a-z%])?$/i;
 function formatSpecifier(specifier) {
   if (!(match = re.exec(specifier))) throw new Error("invalid format: " + specifier);
@@ -4603,7 +4603,7 @@ FormatSpecifier.prototype.toString = function() {
   return this.fill + this.align + this.sign + this.symbol + (this.zero ? "0" : "") + (this.width === void 0 ? "" : Math.max(1, this.width | 0)) + (this.comma ? "," : "") + (this.precision === void 0 ? "" : "." + Math.max(0, this.precision | 0)) + (this.trim ? "~" : "") + this.type;
 };
 
-// ../../../../../../node_modules/d3-format/src/formatTrim.js
+// ../../../distortions-js/node_modules/d3-format/src/formatTrim.js
 function formatTrim_default(s) {
   out: for (var n = s.length, i = 1, i0 = -1, i1; i < n; ++i) {
     switch (s[i]) {
@@ -4623,7 +4623,7 @@ function formatTrim_default(s) {
   return i0 > 0 ? s.slice(0, i0) + s.slice(i1 + 1) : s;
 }
 
-// ../../../../../../node_modules/d3-format/src/formatPrefixAuto.js
+// ../../../distortions-js/node_modules/d3-format/src/formatPrefixAuto.js
 var prefixExponent;
 function formatPrefixAuto_default(x, p) {
   var d = formatDecimalParts(x, p);
@@ -4632,7 +4632,7 @@ function formatPrefixAuto_default(x, p) {
   return i === n ? coefficient : i > n ? coefficient + new Array(i - n + 1).join("0") : i > 0 ? coefficient.slice(0, i) + "." + coefficient.slice(i) : "0." + new Array(1 - i).join("0") + formatDecimalParts(x, Math.max(0, p + i - 1))[0];
 }
 
-// ../../../../../../node_modules/d3-format/src/formatRounded.js
+// ../../../distortions-js/node_modules/d3-format/src/formatRounded.js
 function formatRounded_default(x, p) {
   var d = formatDecimalParts(x, p);
   if (!d) return x + "";
@@ -4640,7 +4640,7 @@ function formatRounded_default(x, p) {
   return exponent < 0 ? "0." + new Array(-exponent).join("0") + coefficient : coefficient.length > exponent + 1 ? coefficient.slice(0, exponent + 1) + "." + coefficient.slice(exponent + 1) : coefficient + new Array(exponent - coefficient.length + 2).join("0");
 }
 
-// ../../../../../../node_modules/d3-format/src/formatTypes.js
+// ../../../distortions-js/node_modules/d3-format/src/formatTypes.js
 var formatTypes_default = {
   "%": (x, p) => (x * 100).toFixed(p),
   "b": (x) => Math.round(x).toString(2),
@@ -4657,12 +4657,12 @@ var formatTypes_default = {
   "x": (x) => Math.round(x).toString(16)
 };
 
-// ../../../../../../node_modules/d3-format/src/identity.js
+// ../../../distortions-js/node_modules/d3-format/src/identity.js
 function identity_default2(x) {
   return x;
 }
 
-// ../../../../../../node_modules/d3-format/src/locale.js
+// ../../../distortions-js/node_modules/d3-format/src/locale.js
 var map = Array.prototype.map;
 var prefixes = ["y", "z", "a", "f", "p", "n", "\xB5", "m", "", "k", "M", "G", "T", "P", "E", "Z", "Y"];
 function locale_default(locale2) {
@@ -4736,7 +4736,7 @@ function locale_default(locale2) {
   };
 }
 
-// ../../../../../../node_modules/d3-format/src/defaultLocale.js
+// ../../../distortions-js/node_modules/d3-format/src/defaultLocale.js
 var locale;
 var format;
 var formatPrefix;
@@ -4752,23 +4752,23 @@ function defaultLocale(definition) {
   return locale;
 }
 
-// ../../../../../../node_modules/d3-format/src/precisionFixed.js
+// ../../../distortions-js/node_modules/d3-format/src/precisionFixed.js
 function precisionFixed_default(step) {
   return Math.max(0, -exponent_default(Math.abs(step)));
 }
 
-// ../../../../../../node_modules/d3-format/src/precisionPrefix.js
+// ../../../distortions-js/node_modules/d3-format/src/precisionPrefix.js
 function precisionPrefix_default(step, value) {
   return Math.max(0, Math.max(-8, Math.min(8, Math.floor(exponent_default(value) / 3))) * 3 - exponent_default(Math.abs(step)));
 }
 
-// ../../../../../../node_modules/d3-format/src/precisionRound.js
+// ../../../distortions-js/node_modules/d3-format/src/precisionRound.js
 function precisionRound_default(step, max4) {
   step = Math.abs(step), max4 = Math.abs(max4) - step;
   return Math.max(0, exponent_default(max4) - exponent_default(step)) + 1;
 }
 
-// ../../../../../../node_modules/d3-scale/src/init.js
+// ../../../distortions-js/node_modules/d3-scale/src/init.js
 function initRange(domain, range2) {
   switch (arguments.length) {
     case 0:
@@ -4783,7 +4783,7 @@ function initRange(domain, range2) {
   return this;
 }
 
-// ../../../../../../node_modules/d3-scale/src/ordinal.js
+// ../../../distortions-js/node_modules/d3-scale/src/ordinal.js
 var implicit = Symbol("implicit");
 function ordinal() {
   var index = new InternMap(), domain = [], range2 = [], unknown = implicit;
@@ -4817,7 +4817,7 @@ function ordinal() {
   return scale;
 }
 
-// ../../../../../../node_modules/d3-scale/src/band.js
+// ../../../distortions-js/node_modules/d3-scale/src/band.js
 function band() {
   var scale = ordinal().unknown(void 0), domain = scale.domain, ordinalRange = scale.range, r0 = 0, r1 = 1, step, bandwidth, round2 = false, paddingInner = 0, paddingOuter = 0, align = 0.5;
   delete scale.unknown;
@@ -4869,19 +4869,19 @@ function band() {
   return initRange.apply(rescale(), arguments);
 }
 
-// ../../../../../../node_modules/d3-scale/src/constant.js
+// ../../../distortions-js/node_modules/d3-scale/src/constant.js
 function constants(x) {
   return function() {
     return x;
   };
 }
 
-// ../../../../../../node_modules/d3-scale/src/number.js
+// ../../../distortions-js/node_modules/d3-scale/src/number.js
 function number3(x) {
   return +x;
 }
 
-// ../../../../../../node_modules/d3-scale/src/continuous.js
+// ../../../distortions-js/node_modules/d3-scale/src/continuous.js
 var unit = [0, 1];
 function identity2(x) {
   return x;
@@ -4966,7 +4966,7 @@ function continuous() {
   return transformer()(identity2, identity2);
 }
 
-// ../../../../../../node_modules/d3-scale/src/tickFormat.js
+// ../../../distortions-js/node_modules/d3-scale/src/tickFormat.js
 function tickFormat(start2, stop, count, specifier) {
   var step = tickStep(start2, stop, count), precision;
   specifier = formatSpecifier(specifier == null ? ",f" : specifier);
@@ -4993,7 +4993,7 @@ function tickFormat(start2, stop, count, specifier) {
   return format(specifier);
 }
 
-// ../../../../../../node_modules/d3-scale/src/linear.js
+// ../../../distortions-js/node_modules/d3-scale/src/linear.js
 function linearish(scale) {
   var domain = scale.domain;
   scale.ticks = function(count) {
@@ -5048,17 +5048,17 @@ function linear2() {
   return linearish(scale);
 }
 
-// ../../../../../../node_modules/d3-scale-chromatic/src/colors.js
+// ../../../distortions-js/node_modules/d3-scale-chromatic/src/colors.js
 function colors_default(specifier) {
   var n = specifier.length / 6 | 0, colors = new Array(n), i = 0;
   while (i < n) colors[i] = "#" + specifier.slice(i * 6, ++i * 6);
   return colors;
 }
 
-// ../../../../../../node_modules/d3-scale-chromatic/src/categorical/category10.js
+// ../../../distortions-js/node_modules/d3-scale-chromatic/src/categorical/category10.js
 var category10_default = colors_default("1f77b4ff7f0e2ca02cd627289467bd8c564be377c27f7f7fbcbd2217becf");
 
-// ../../../../../../node_modules/d3-zoom/src/transform.js
+// ../../../distortions-js/node_modules/d3-zoom/src/transform.js
 function Transform(k, x, y) {
   this.k = k;
   this.x = x;
@@ -5133,6 +5133,16 @@ function annotation(svg, options, width, height, margin) {
       }
     }
   };
+}
+function ellipse_color_attr(opts, mappingObj, colorScale) {
+  const applyColor = (d) => mappingObj?.color ? colorScale(d[mappingObj.color]) : null;
+  if (opts.stroke) {
+    return { fill: "none", stroke: (d) => applyColor(d) || opts.stroke };
+  } else if (opts.color) {
+    return { fill: (d) => applyColor(d) || opts.color, stroke: "none" };
+  } else {
+    return { fill: (d) => applyColor(d) || "#0c0c0c", stroke: "none" };
+  }
 }
 
 // ../../../distortions-js/lib/reshape.js
@@ -5255,7 +5265,7 @@ function filter_obj(raw, allowed) {
 // ../../../distortions-js/lib/inter_isometry.js
 var import_svd_js = __toESM(require_svd_js_min(), 1);
 
-// ../../../../../../node_modules/@babel/runtime/helpers/esm/extends.js
+// ../../../distortions-js/node_modules/@babel/runtime/helpers/esm/extends.js
 function _extends() {
   return _extends = Object.assign ? Object.assign.bind() : function(n) {
     for (var e = 1; e < arguments.length; e++) {
@@ -5266,7 +5276,7 @@ function _extends() {
   }, _extends.apply(null, arguments);
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/core/config.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/core/config.js
 var DEFAULT_CONFIG = {
   // minimum relative difference between two compared values,
   // used by all comparison functions
@@ -5293,7 +5303,7 @@ var DEFAULT_CONFIG = {
   randomSeed: null
 };
 
-// ../../../../../../node_modules/mathjs/lib/esm/utils/customs.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/utils/customs.js
 function getSafeProperty(object, prop) {
   if (isSafeProperty(object, prop)) {
     return object[prop];
@@ -5356,7 +5366,7 @@ var safeNativeMethods = {
   toLocaleString: true
 };
 
-// ../../../../../../node_modules/mathjs/lib/esm/utils/map.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/utils/map.js
 var ObjectWrappingMap = class {
   constructor(object) {
     this.wrappedObject = object;
@@ -5409,7 +5419,7 @@ function mapIterator(it, callback) {
   };
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/utils/is.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/utils/is.js
 function isNumber(x) {
   return typeof x === "number";
 }
@@ -5554,7 +5564,7 @@ function typeOf(x) {
   return t;
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/utils/object.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/utils/object.js
 function clone(x) {
   var type2 = typeof x;
   if (type2 === "number" || type2 === "bigint" || type2 === "string" || type2 === "boolean" || x === null || x === void 0) {
@@ -5646,11 +5656,11 @@ function pickShallow(object, properties) {
   return copy2;
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/core/function/config.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/core/function/config.js
 var MATRIX_OPTIONS = ["Matrix", "Array"];
 var NUMBER_OPTIONS = ["number", "BigNumber", "Fraction"];
 
-// ../../../../../../node_modules/mathjs/lib/esm/entry/configReadonly.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/entry/configReadonly.js
 var config = function config2(options) {
   if (options) {
     throw new Error("The global config is readonly. \nPlease create a mathjs instance if you want to change the default configuration. \nExample:\n\n  import { create, all } from 'mathjs';\n  const mathjs = create(all);\n  mathjs.config({ number: 'BigNumber' });\n");
@@ -5662,10 +5672,10 @@ _extends(config, DEFAULT_CONFIG, {
   NUMBER_OPTIONS
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/core/function/typed.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/core/function/typed.js
 var import_typed_function = __toESM(require_typed_function(), 1);
 
-// ../../../../../../node_modules/mathjs/lib/esm/utils/factory.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/utils/factory.js
 function factory(name43, dependencies44, create2, meta) {
   function assertAndCreate(scope) {
     var deps = pickShallow(scope, dependencies44.map(stripOptionalNotation));
@@ -5694,7 +5704,7 @@ function stripOptionalNotation(dependency) {
   return dependency && dependency[0] === "?" ? dependency.slice(1) : dependency;
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/utils/number.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/utils/number.js
 function isInteger(value) {
   if (typeof value === "boolean") {
     return true;
@@ -6040,7 +6050,7 @@ function _toNumberOrDefault(value, defaultValue) {
   }
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/core/function/typed.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/core/function/typed.js
 var _createTyped2 = function _createTyped() {
   _createTyped2 = import_typed_function.default.create;
   return import_typed_function.default;
@@ -6465,7 +6475,7 @@ function throwNoFraction(x) {
   throw new Error("Cannot convert value ".concat(x, " into a Fraction, no class 'Fraction' provided."));
 }
 
-// ../../../../../../node_modules/decimal.js/decimal.mjs
+// ../../../distortions-js/node_modules/decimal.js/decimal.mjs
 var EXP_LIMIT = 9e15;
 var MAX_DIGITS = 1e9;
 var NUMERALS = "0123456789abcdef";
@@ -8642,7 +8652,7 @@ LN10 = new Decimal(LN10);
 PI = new Decimal(PI);
 var decimal_default = Decimal;
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/bignumber/BigNumber.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/bignumber/BigNumber.js
 var name = "BigNumber";
 var dependencies2 = ["?on", "config"];
 var createBigNumberClass = /* @__PURE__ */ factory(name, dependencies2, (_ref) => {
@@ -8680,7 +8690,7 @@ var createBigNumberClass = /* @__PURE__ */ factory(name, dependencies2, (_ref) =
   isClass: true
 });
 
-// ../../../../../../node_modules/complex.js/dist/complex.mjs
+// ../../../distortions-js/node_modules/complex.js/dist/complex.mjs
 var cosh2 = Math.cosh || function(x) {
   return Math.abs(x) < 1e-9 ? 1 - x : (Math.exp(x) + Math.exp(-x)) * 0.5;
 };
@@ -9667,7 +9677,7 @@ Complex["INFINITY"] = new Complex(Infinity, Infinity);
 Complex["NAN"] = new Complex(NaN, NaN);
 Complex["EPSILON"] = 1e-15;
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/complex/Complex.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/complex/Complex.js
 var name2 = "Complex";
 var dependencies3 = [];
 var createComplexClass = /* @__PURE__ */ factory(name2, dependencies3, () => {
@@ -9789,7 +9799,7 @@ var createComplexClass = /* @__PURE__ */ factory(name2, dependencies3, () => {
   isClass: true
 });
 
-// ../../../../../../node_modules/fraction.js/dist/fraction.mjs
+// ../../../distortions-js/node_modules/fraction.js/dist/fraction.mjs
 if (typeof BigInt === "undefined") BigInt = function(n) {
   if (isNaN(n)) throw new Error("");
   return n;
@@ -10555,7 +10565,7 @@ Fraction.prototype = {
   }
 };
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/fraction/Fraction.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/fraction/Fraction.js
 var name3 = "Fraction";
 var dependencies4 = [];
 var createFractionClass = /* @__PURE__ */ factory(name3, dependencies4, () => {
@@ -10580,7 +10590,7 @@ var createFractionClass = /* @__PURE__ */ factory(name3, dependencies4, () => {
   isClass: true
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/Matrix.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/Matrix.js
 var name4 = "Matrix";
 var dependencies5 = [];
 var createMatrixClass = /* @__PURE__ */ factory(name4, dependencies5, () => {
@@ -10647,7 +10657,7 @@ var createMatrixClass = /* @__PURE__ */ factory(name4, dependencies5, () => {
   isClass: true
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/utils/bignumber/formatter.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/utils/bignumber/formatter.js
 function formatBigNumberToBase(n, base, size2) {
   var BigNumberCtor = n.constructor;
   var big2 = new BigNumberCtor(2);
@@ -10759,7 +10769,7 @@ function _toNumberOrDefault2(value, defaultValue) {
   }
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/utils/string.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/utils/string.js
 function format4(value, options) {
   var result = _format(value, options);
   if (options && typeof options === "object" && "truncate" in options && result.length > options.truncate) {
@@ -10844,7 +10854,7 @@ function looksLikeFraction(value) {
   return value && typeof value === "object" && typeof value.s === "bigint" && typeof value.n === "bigint" && typeof value.d === "bigint" || false;
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/error/DimensionError.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/error/DimensionError.js
 function DimensionError(actual, expected, relation) {
   if (!(this instanceof DimensionError)) {
     throw new SyntaxError("Constructor must be called with the new operator");
@@ -10860,7 +10870,7 @@ DimensionError.prototype.constructor = RangeError;
 DimensionError.prototype.name = "DimensionError";
 DimensionError.prototype.isDimensionError = true;
 
-// ../../../../../../node_modules/mathjs/lib/esm/error/IndexError.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/error/IndexError.js
 function IndexError(index, min3, max4) {
   if (!(this instanceof IndexError)) {
     throw new SyntaxError("Constructor must be called with the new operator");
@@ -10887,7 +10897,7 @@ IndexError.prototype.constructor = RangeError;
 IndexError.prototype.name = "IndexError";
 IndexError.prototype.isIndexError = true;
 
-// ../../../../../../node_modules/mathjs/lib/esm/utils/array.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/utils/array.js
 function arraySize(x) {
   var s = [];
   while (Array.isArray(x)) {
@@ -11276,7 +11286,7 @@ function clone3(array2) {
   return _extends([], array2);
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/utils/optimizeCallback.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/utils/optimizeCallback.js
 var import_typed_function2 = __toESM(require_typed_function(), 1);
 function optimizeCallback(callback, array2, name43) {
   var isUnary = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : false;
@@ -11382,7 +11392,7 @@ function _createCallbackError(err, args, mappingFnName, callbackName) {
   }
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/DenseMatrix.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/DenseMatrix.js
 var name5 = "DenseMatrix";
 var dependencies6 = ["Matrix"];
 var createDenseMatrixClass = /* @__PURE__ */ factory(name5, dependencies6, (_ref) => {
@@ -11979,7 +11989,7 @@ var createDenseMatrixClass = /* @__PURE__ */ factory(name5, dependencies6, (_ref
   isClass: true
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/utils/collection.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/utils/collection.js
 function deepMap2(array2, callback, skipZeros) {
   if (!skipZeros) {
     if (isMatrix(array2)) {
@@ -11996,7 +12006,7 @@ function deepMap2(array2, callback, skipZeros) {
   }
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/utils/isInteger.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/utils/isInteger.js
 var name6 = "isInteger";
 var dependencies7 = ["typed"];
 var createIsInteger = /* @__PURE__ */ factory(name6, dependencies7, (_ref) => {
@@ -12019,7 +12029,7 @@ var createIsInteger = /* @__PURE__ */ factory(name6, dependencies7, (_ref) => {
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/plain/number/arithmetic.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/plain/number/arithmetic.js
 var n1 = "number";
 var n2 = "number, number";
 function absNumber(a) {
@@ -12168,7 +12178,7 @@ function normNumber(x) {
 }
 normNumber.signature = n1;
 
-// ../../../../../../node_modules/mathjs/lib/esm/utils/bignumber/nearlyEqual.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/utils/bignumber/nearlyEqual.js
 function nearlyEqual2(a, b) {
   var relTol = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : 1e-9;
   var absTol = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : 0;
@@ -12190,7 +12200,7 @@ function nearlyEqual2(a, b) {
   return a.minus(b).abs().lte(a.constructor.max(a.constructor.max(a.abs(), b.abs()).mul(relTol), absTol));
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/utils/isZero.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/utils/isZero.js
 var name7 = "isZero";
 var dependencies8 = ["typed", "equalScalar"];
 var createIsZero = /* @__PURE__ */ factory(name7, dependencies8, (_ref) => {
@@ -12206,12 +12216,12 @@ var createIsZero = /* @__PURE__ */ factory(name7, dependencies8, (_ref) => {
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/utils/complex.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/utils/complex.js
 function complexEquals(x, y, relTol, absTol) {
   return nearlyEqual(x.re, y.re, relTol, absTol) && nearlyEqual(x.im, y.im, relTol, absTol);
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/relational/compareUnits.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/relational/compareUnits.js
 var createCompareUnits = /* @__PURE__ */ factory("compareUnits", ["typed"], (_ref) => {
   var {
     typed: typed3
@@ -12226,7 +12236,7 @@ var createCompareUnits = /* @__PURE__ */ factory("compareUnits", ["typed"], (_re
   };
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/relational/equalScalar.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/relational/equalScalar.js
 var name8 = "equalScalar";
 var dependencies9 = ["typed", "config"];
 var createEqualScalar = /* @__PURE__ */ factory(name8, dependencies9, (_ref) => {
@@ -12270,7 +12280,7 @@ var createEqualScalarNumber = factory(name8, ["typed", "config"], (_ref2) => {
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/SparseMatrix.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/SparseMatrix.js
 var name9 = "SparseMatrix";
 var dependencies10 = ["typed", "equalScalar", "Matrix"];
 var createSparseMatrixClass = /* @__PURE__ */ factory(name9, dependencies10, (_ref) => {
@@ -13100,7 +13110,7 @@ var createSparseMatrixClass = /* @__PURE__ */ factory(name9, dependencies10, (_r
   isClass: true
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/number.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/number.js
 var name10 = "number";
 var dependencies11 = ["typed"];
 function getNonDecimalNumberParts(input) {
@@ -13201,7 +13211,7 @@ var createNumber = /* @__PURE__ */ factory(name10, dependencies11, (_ref) => {
   return number5;
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/bignumber/function/bignumber.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/bignumber/function/bignumber.js
 var name11 = "bignumber";
 var dependencies12 = ["typed", "BigNumber"];
 var createBignumber = /* @__PURE__ */ factory(name11, dependencies12, (_ref) => {
@@ -13255,7 +13265,7 @@ var createBignumber = /* @__PURE__ */ factory(name11, dependencies12, (_ref) => 
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/fraction/function/fraction.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/fraction/function/fraction.js
 var name12 = "fraction";
 var dependencies13 = ["typed", "Fraction"];
 var createFraction = /* @__PURE__ */ factory(name12, dependencies13, (_ref) => {
@@ -13303,7 +13313,7 @@ var createFraction = /* @__PURE__ */ factory(name12, dependencies13, (_ref) => {
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/function/matrix.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/function/matrix.js
 var name13 = "matrix";
 var dependencies14 = ["typed", "Matrix", "DenseMatrix", "SparseMatrix"];
 var createMatrix = /* @__PURE__ */ factory(name13, dependencies14, (_ref) => {
@@ -13343,7 +13353,7 @@ var createMatrix = /* @__PURE__ */ factory(name13, dependencies14, (_ref) => {
   }
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/arithmetic/unaryMinus.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/arithmetic/unaryMinus.js
 var name14 = "unaryMinus";
 var dependencies15 = ["typed"];
 var createUnaryMinus = /* @__PURE__ */ factory(name14, dependencies15, (_ref) => {
@@ -13365,7 +13375,7 @@ var createUnaryMinus = /* @__PURE__ */ factory(name14, dependencies15, (_ref) =>
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/arithmetic/abs.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/arithmetic/abs.js
 var name15 = "abs";
 var dependencies16 = ["typed"];
 var createAbs = /* @__PURE__ */ factory(name15, dependencies16, (_ref) => {
@@ -13381,7 +13391,7 @@ var createAbs = /* @__PURE__ */ factory(name15, dependencies16, (_ref) => {
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/arithmetic/addScalar.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/arithmetic/addScalar.js
 var name16 = "addScalar";
 var dependencies17 = ["typed"];
 var createAddScalar = /* @__PURE__ */ factory(name16, dependencies17, (_ref) => {
@@ -13418,7 +13428,7 @@ var createAddScalar = /* @__PURE__ */ factory(name16, dependencies17, (_ref) => 
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/arithmetic/subtractScalar.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/arithmetic/subtractScalar.js
 var name17 = "subtractScalar";
 var dependencies18 = ["typed"];
 var createSubtractScalar = /* @__PURE__ */ factory(name17, dependencies18, (_ref) => {
@@ -13455,7 +13465,7 @@ var createSubtractScalar = /* @__PURE__ */ factory(name17, dependencies18, (_ref
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo11xS0s.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo11xS0s.js
 var name18 = "matAlgo11xS0s";
 var dependencies19 = ["typed", "equalScalar"];
 var createMatAlgo11xS0s = /* @__PURE__ */ factory(name18, dependencies19, (_ref) => {
@@ -13510,7 +13520,7 @@ var createMatAlgo11xS0s = /* @__PURE__ */ factory(name18, dependencies19, (_ref)
   };
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo12xSfs.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo12xSfs.js
 var name19 = "matAlgo12xSfs";
 var dependencies20 = ["typed", "DenseMatrix"];
 var createMatAlgo12xSfs = /* @__PURE__ */ factory(name19, dependencies20, (_ref) => {
@@ -13565,7 +13575,7 @@ var createMatAlgo12xSfs = /* @__PURE__ */ factory(name19, dependencies20, (_ref)
   };
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo14xDs.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo14xDs.js
 var name20 = "matAlgo14xDs";
 var dependencies21 = ["typed"];
 var createMatAlgo14xDs = /* @__PURE__ */ factory(name20, dependencies21, (_ref) => {
@@ -13605,7 +13615,7 @@ var createMatAlgo14xDs = /* @__PURE__ */ factory(name20, dependencies21, (_ref) 
   }
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo03xDSf.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo03xDSf.js
 var name21 = "matAlgo03xDSf";
 var dependencies22 = ["typed"];
 var createMatAlgo03xDSf = /* @__PURE__ */ factory(name21, dependencies22, (_ref) => {
@@ -13669,7 +13679,7 @@ var createMatAlgo03xDSf = /* @__PURE__ */ factory(name21, dependencies22, (_ref)
   };
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo05xSfSf.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo05xSfSf.js
 var name22 = "matAlgo05xSfSf";
 var dependencies23 = ["typed", "equalScalar"];
 var createMatAlgo05xSfSf = /* @__PURE__ */ factory(name22, dependencies23, (_ref) => {
@@ -13766,7 +13776,7 @@ var createMatAlgo05xSfSf = /* @__PURE__ */ factory(name22, dependencies23, (_ref
   };
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo13xDD.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo13xDD.js
 var name23 = "matAlgo13xDD";
 var dependencies24 = ["typed"];
 var createMatAlgo13xDD = /* @__PURE__ */ factory(name23, dependencies24, (_ref) => {
@@ -13818,7 +13828,7 @@ var createMatAlgo13xDD = /* @__PURE__ */ factory(name23, dependencies24, (_ref) 
   }
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/utils/broadcast.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/utils/broadcast.js
 function broadcast(A, B) {
   if (deepStrictEqual(A.size(), B.size())) {
     return [A, B];
@@ -13833,7 +13843,7 @@ function _broadcastTo(M, size2) {
   return M.create(broadcastTo(M.valueOf(), size2), M.datatype());
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/utils/matrixAlgorithmSuite.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/utils/matrixAlgorithmSuite.js
 var name24 = "matrixAlgorithmSuite";
 var dependencies25 = ["typed", "matrix"];
 var createMatrixAlgorithmSuite = /* @__PURE__ */ factory(name24, dependencies25, (_ref) => {
@@ -13956,7 +13966,7 @@ var createMatrixAlgorithmSuite = /* @__PURE__ */ factory(name24, dependencies25,
   };
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo01xDSid.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo01xDSid.js
 var name25 = "matAlgo01xDSid";
 var dependencies26 = ["typed"];
 var createMatAlgo01xDSid = /* @__PURE__ */ factory(name25, dependencies26, (_ref) => {
@@ -14015,7 +14025,7 @@ var createMatAlgo01xDSid = /* @__PURE__ */ factory(name25, dependencies26, (_ref
   };
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo04xSidSid.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo04xSidSid.js
 var name26 = "matAlgo04xSidSid";
 var dependencies27 = ["typed", "equalScalar"];
 var createMatAlgo04xSidSid = /* @__PURE__ */ factory(name26, dependencies27, (_ref) => {
@@ -14117,7 +14127,7 @@ var createMatAlgo04xSidSid = /* @__PURE__ */ factory(name26, dependencies27, (_r
   };
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo10xSids.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/type/matrix/utils/matAlgo10xSids.js
 var name27 = "matAlgo10xSids";
 var dependencies28 = ["typed", "DenseMatrix"];
 var createMatAlgo10xSids = /* @__PURE__ */ factory(name27, dependencies28, (_ref) => {
@@ -14172,7 +14182,7 @@ var createMatAlgo10xSids = /* @__PURE__ */ factory(name27, dependencies28, (_ref
   };
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/arithmetic/multiplyScalar.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/arithmetic/multiplyScalar.js
 var name28 = "multiplyScalar";
 var dependencies29 = ["typed"];
 var createMultiplyScalar = /* @__PURE__ */ factory(name28, dependencies29, (_ref) => {
@@ -14198,7 +14208,7 @@ var createMultiplyScalar = /* @__PURE__ */ factory(name28, dependencies29, (_ref
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/arithmetic/multiply.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/arithmetic/multiply.js
 var name29 = "multiply";
 var dependencies30 = ["typed", "matrix", "addScalar", "multiplyScalar", "equalScalar", "dot"];
 var createMultiply = /* @__PURE__ */ factory(name29, dependencies30, (_ref) => {
@@ -14684,7 +14694,7 @@ var createMultiply = /* @__PURE__ */ factory(name29, dependencies30, (_ref) => {
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/arithmetic/subtract.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/arithmetic/subtract.js
 var name30 = "subtract";
 var dependencies31 = ["typed", "matrix", "equalScalar", "subtractScalar", "unaryMinus", "DenseMatrix", "concat"];
 var createSubtract = /* @__PURE__ */ factory(name30, dependencies31, (_ref) => {
@@ -14732,7 +14742,7 @@ var createSubtract = /* @__PURE__ */ factory(name30, dependencies31, (_ref) => {
   }));
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/complex/conj.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/complex/conj.js
 var name31 = "conj";
 var dependencies32 = ["typed"];
 var createConj = /* @__PURE__ */ factory(name31, dependencies32, (_ref) => {
@@ -14747,7 +14757,7 @@ var createConj = /* @__PURE__ */ factory(name31, dependencies32, (_ref) => {
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/matrix/concat.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/matrix/concat.js
 var name32 = "concat";
 var dependencies33 = ["typed", "matrix", "isInteger"];
 var createConcat = /* @__PURE__ */ factory(name32, dependencies33, (_ref) => {
@@ -14808,7 +14818,7 @@ var createConcat = /* @__PURE__ */ factory(name32, dependencies33, (_ref) => {
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/matrix/diag.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/matrix/diag.js
 var name33 = "diag";
 var dependencies34 = ["typed", "matrix", "DenseMatrix", "SparseMatrix"];
 var createDiag = /* @__PURE__ */ factory(name33, dependencies34, (_ref) => {
@@ -14899,7 +14909,7 @@ var createDiag = /* @__PURE__ */ factory(name33, dependencies34, (_ref) => {
   }
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/matrix/identity.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/matrix/identity.js
 var name34 = "identity";
 var dependencies35 = ["typed", "config", "matrix", "BigNumber", "DenseMatrix", "SparseMatrix"];
 var createIdentity = /* @__PURE__ */ factory(name34, dependencies35, (_ref) => {
@@ -14986,7 +14996,7 @@ var createIdentity = /* @__PURE__ */ factory(name34, dependencies35, (_ref) => {
   }
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/utils/noop.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/utils/noop.js
 function noBignumber() {
   throw new Error('No "bignumber" implementation available');
 }
@@ -14997,7 +15007,7 @@ function noMatrix() {
   throw new Error('No "matrix" implementation available');
 }
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/matrix/size.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/matrix/size.js
 var name35 = "size";
 var dependencies36 = ["typed", "config", "?matrix"];
 var createSize = /* @__PURE__ */ factory(name35, dependencies36, (_ref) => {
@@ -15020,7 +15030,7 @@ var createSize = /* @__PURE__ */ factory(name35, dependencies36, (_ref) => {
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/matrix/zeros.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/matrix/zeros.js
 var name36 = "zeros";
 var dependencies37 = ["typed", "config", "matrix", "BigNumber"];
 var createZeros = /* @__PURE__ */ factory(name36, dependencies37, (_ref) => {
@@ -15093,7 +15103,7 @@ var createZeros = /* @__PURE__ */ factory(name36, dependencies37, (_ref) => {
   }
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/utils/numeric.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/utils/numeric.js
 var name37 = "numeric";
 var dependencies38 = ["number", "?bignumber", "?fraction"];
 var createNumeric = /* @__PURE__ */ factory(name37, dependencies38, (_ref) => {
@@ -15135,7 +15145,7 @@ var createNumeric = /* @__PURE__ */ factory(name37, dependencies38, (_ref) => {
   };
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/arithmetic/divideScalar.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/arithmetic/divideScalar.js
 var name38 = "divideScalar";
 var dependencies39 = ["typed", "numeric"];
 var createDivideScalar = /* @__PURE__ */ factory(name38, dependencies39, (_ref) => {
@@ -15164,7 +15174,7 @@ var createDivideScalar = /* @__PURE__ */ factory(name38, dependencies39, (_ref) 
   });
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/arithmetic/add.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/arithmetic/add.js
 var name39 = "add";
 var dependencies40 = ["typed", "matrix", "addScalar", "equalScalar", "DenseMatrix", "SparseMatrix", "concat"];
 var createAdd = /* @__PURE__ */ factory(name39, dependencies40, (_ref) => {
@@ -15210,7 +15220,7 @@ var createAdd = /* @__PURE__ */ factory(name39, dependencies40, (_ref) => {
   }));
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/matrix/dot.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/matrix/dot.js
 var name40 = "dot";
 var dependencies41 = ["typed", "addScalar", "multiplyScalar", "conj", "size"];
 var createDot = /* @__PURE__ */ factory(name40, dependencies41, (_ref) => {
@@ -15326,7 +15336,7 @@ var createDot = /* @__PURE__ */ factory(name40, dependencies41, (_ref) => {
   }
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/matrix/det.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/matrix/det.js
 var name41 = "det";
 var dependencies42 = ["typed", "matrix", "subtractScalar", "multiply", "divideScalar", "isZero", "unaryMinus"];
 var createDet = /* @__PURE__ */ factory(name41, dependencies42, (_ref) => {
@@ -15420,7 +15430,7 @@ var createDet = /* @__PURE__ */ factory(name41, dependencies42, (_ref) => {
   }
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/function/matrix/inv.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/function/matrix/inv.js
 var name42 = "inv";
 var dependencies43 = ["typed", "matrix", "divideScalar", "addScalar", "multiply", "unaryMinus", "det", "identity", "abs"];
 var createInv = /* @__PURE__ */ factory(name42, dependencies43, (_ref) => {
@@ -15544,7 +15554,7 @@ var createInv = /* @__PURE__ */ factory(name42, dependencies43, (_ref) => {
   }
 });
 
-// ../../../../../../node_modules/mathjs/lib/esm/entry/pureFunctionsAny.generated.js
+// ../../../distortions-js/node_modules/mathjs/lib/esm/entry/pureFunctionsAny.generated.js
 var BigNumber = /* @__PURE__ */ createBigNumberClass({
   config
 });
@@ -15867,6 +15877,7 @@ var DistortionPlot = class {
       radiusMax: 25,
       radiusMin: 3,
       color: null,
+      stroke: null,
       opacity: 1,
       className: "ellipse"
     };
@@ -15876,7 +15887,8 @@ var DistortionPlot = class {
       options: opts,
       render: () => {
         this.rScale.range([opts.radiusMin, opts.radiusMax]);
-        this.g.append("g").attr("class", opts.className).selectAll("ellipse").data(this.dataset, (d) => d._id).enter().append("ellipse").attr("cx", (d) => this.xScale(d[this.mappingObj.x])).attr("cy", (d) => this.yScale(d[this.mappingObj.y])).attr("rx", (d) => this.rScale(d[this.mappingObj.a])).attr("ry", (d) => this.rScale(d[this.mappingObj.b])).attr("transform", (d) => `rotate(${d[this.mappingObj.angle]} ${this.xScale(d[this.mappingObj.x])} ${this.yScale(d[this.mappingObj.y])})`).attr("fill", (d) => this.mappingObj.color ? this.colorScale(d[this.mappingObj.color]) : opts.color || "#0c0c0c").attr("opacity", opts.opacity);
+        const { fill, stroke } = ellipse_color_attr(opts, this.mappingObj, this.colorScale);
+        this.g.append("g").attr("class", opts.className).selectAll("ellipse").data(this.dataset, (d) => d._id).enter().append("ellipse").attr("cx", (d) => this.xScale(d[this.mappingObj.x])).attr("cy", (d) => this.yScale(d[this.mappingObj.y])).attr("rx", (d) => this.rScale(d[this.mappingObj.a])).attr("ry", (d) => this.rScale(d[this.mappingObj.b])).attr("transform", (d) => `rotate(${d[this.mappingObj.angle]} ${this.xScale(d[this.mappingObj.x])} ${this.yScale(d[this.mappingObj.y])})`).attr("fill", fill).attr("stroke", stroke).attr("opacity", opts.opacity);
       }
     });
     return this;
@@ -15948,8 +15960,11 @@ var DistortionPlot = class {
           this.colorScale = linear2(rangeValues, [opts.scheme[0], opts.scheme[1]]);
         }
         let className = opts.className || this.layers[0].options.className;
-        this.svg.select(`.${className}`).selectAll("*").attr("fill", (d) => this.colorScale(d[this.mappingObj.color]));
-        this.svg.select(`.${className}-background`).selectAll("*").attr("fill", (d) => this.colorScale(d[this.mappingObj.color]));
+        const { fill, stroke } = ellipse_color_attr(opts, this.mappingObj, this.colorScale);
+        console.log(fill);
+        console.log(stroke);
+        this.svg.select(`.${className}`).selectAll("*").attr("fill", fill).attr("stroke", stroke);
+        this.svg.select(`.${className}-background`).selectAll("*").attr("fill", fill).attr("stroke", stroke);
         const legend = d3col.legendColor().shapePadding(opts.padding).shapeHeight(opts.size).shapeWidth(opts.size).title(this.mappingObj.color).scale(this.colorScale);
         this.g.append("g").attr("class", "legend").attr("id", "colorScale").attr("transform", `translate(${this.plotWidth + opts.x_offset}, ${opts.y_offset})`).call(legend);
         this.g.selectAll("#colorScale .label").attr("font-size", opts.legendTextSize).attr("transform", `translate(${opts.labelOffset}, ${0.75 * opts.size})`);
