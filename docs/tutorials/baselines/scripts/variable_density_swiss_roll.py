@@ -19,6 +19,9 @@ def _symmetric_centers(a: float, b: float, K: int) -> np.ndarray:
     return np.column_stack((xs, ys))
 
 """Return Non-Uniform Swiss Roll Dataset
+
+Code originally from: https://github.com/mmp2/manifold-learning-examples/blob/main/variable_density.md
+
 a: length of swiss roll in angular direction
 b: length of swiss roll in z direction
 sigma: standard deviation of normal distributions
@@ -28,7 +31,7 @@ grid: if True, the centers would be aligned in a grid. Otherwise, they would be 
 dim: want to have 'dim' dimension square matrix with other entires zero. default dim=20
 plot: whether want to show plot, default not show
 """
-def non_uniform_swiss(a: float, b: float, sigma: float, n: int, K: int = 2, dim: int = 20) -> np.ndarray:
+def non_uniform_swiss_original(a: float, b: float, sigma: float, n: int, K: int = 2, dim: int = 20) -> np.ndarray:
     mu_Xs = np.random.uniform(0, a, K)
     mu_Ys = np.random.uniform(0, b, K)
     mu = np.vstack((mu_Xs, mu_Ys)).T
@@ -52,11 +55,14 @@ def non_uniform_swiss(a: float, b: float, sigma: float, n: int, K: int = 2, dim:
         data = np.hstack((data, np.zeros((m, dim - 3))))
     return data, t
 
-def non_uniform_swiss2(a: float, b: float, sigma: float, n: int, K: int = 2, pi0: float = 0.1, dim: int = 20) -> Tuple[np.ndarray, np.ndarray]:
+def non_uniform_swiss(a: float, b: float, sigma: float, n: int, K: int = 2, pi0: float = 0.1, dim: int = 20) -> Tuple[np.ndarray, np.ndarray]:
     """
     Swiss roll with:
       - Uniform background occupying probability pi0
       - K Gaussian components sharing remaining probability 1 - pi0
+
+    The main difference from the previous implementation is that it includes a
+    background uniform component.
     """
     mu = _symmetric_centers(a, b, K)
     pis = np.array([pi0] + [(1 - pi0) / K] * K)
