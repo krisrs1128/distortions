@@ -25,6 +25,7 @@ library(tidyverse)
 library(fs)
 library(neMDBD)
 library(sleepwalk)
+set.seed(20251110)
 
 data_csv <- path(data_dir, paste0("swiss_noise_", noise, ".csv"))
 emb_csv  <- path(data_dir, paste0("swiss_noise_", noise, "_embedding.csv"))
@@ -35,12 +36,19 @@ Y <- as.matrix(read_csv(emb_csv)[, 1:2])
 
 # compute perturbation score (MDBD)
 message(sprintf("Computing perturbation score for noise=%s", noise))
+t_start <- Sys.time()
 pscore_val <- perturbation_score_compute(X, Y, 100, approx = 2)
+time_used <- Sys.time() - t_start
+
+# Save runtime to a text file
+runtime_path <- path(data_dir, paste0("runtime_", noise, ".txt"))
+writeLines(as.character(time_used), runtime_path)
+message("Wrote pscore runtime to: ", as.character(runtime_path))
 
 out_pscore <- tibble(score = pscore_val)
 pscore_path <- path(data_dir, paste0("pscore_", noise, ".csv"))
 write_csv(out_pscore, pscore_path)
-message("Wrote pscore to: ", as.character(pscore_path))
+message("Wrote pscore results to: ", as.character(pscore_path))
 
 # produce a Sleepwalk HTML file (embedding vs original distances)
 html_file <- path(data_dir, paste0("swissroll_noise_", noise, ".html"))
