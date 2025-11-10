@@ -41,7 +41,7 @@ embeddings |>
     ggplot() +
     geom_point(
         aes(
-            `0`, `1`, #col = `1`,
+            `0`, `1`,
             col = score,
             size = score
             )
