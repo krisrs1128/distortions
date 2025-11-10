@@ -49,6 +49,7 @@ embeddings |>
     scale_size(range = c(0.001, .8)) +
     scale_color_scico(palette = "berlin") +
     facet_wrap(~ noise_level, nrow = 2)
+ggsave("~/Downloads/p_scores.png", width = 6.5, height = 4)
 
 ggplot(p_scores) +
     stat_ecdf(aes(log10(score), group = factor(noise_level), col = noise_level)) +
@@ -59,4 +60,20 @@ ggplot(p_scores) +
         x = "Perturbation Score",
         col = "Noise Level"
     )
+ggsave("~/Downloads/p_score_ecdf.png", width = 6.5, height = 4)
+
+embeddings |>
+    left_join(p_scores) |>
+    ggplot() +
+    geom_point(
+        aes(
+            `0`, `1`,
+            col = `2`
+            ),
+            size = 0.4
+        ) +
+    scale_color_scico(palette = "bamO") +
+    labs(col = "manifold\nparameter") +
+    facet_wrap(~ noise_level, nrow = 2)
+ggsave("~/Downloads/noisy_embedding.png", width = 6.5, height = 4)
 ```
