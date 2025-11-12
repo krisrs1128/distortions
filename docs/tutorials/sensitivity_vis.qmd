@@ -1,0 +1,99 @@
+---
+title: Additional Sensitivity Visualizations
+---
+
+```{r}
+library(tidyverse)
+library(scico)
+library(patchwork)
+th <- theme_minimal() +
+    theme(
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(fill = "#f7f7f7"),
+        panel.border = element_rect(fill = NA, color = "#0c0c0c"),
+        axis.text = element_text(size = 14),
+        axis.title = element_text(size = 16),
+        strip.text = element_text(size = 16),
+        legend.position = "bottom"
+    )
+theme_set(th)
+```
+
+```{r}
+sensitivity <- read_csv("tutorials/data/sensitivity_sub_df.csv")
+sensitivity
+
+# Helper function to create sensitivity plots
+plot_sensitivity <- function(data, x_var, color_var, zoom = FALSE, add_rect = FALSE, title = "") {
+    # Apply zoom filter if requested
+    if (zoom) {
+        data <- data |>
+            group_by(sample) |>
+            filter(all(hs0 < 1) && all(hs1 < 0.05)) |>
+            ungroup()
+    }
+
+    # Prepare data
+    plot_data <- data |>
+        select(sample, scaling_epps, radius, hs0, hs1) |>
+        pivot_longer(hs0:hs1) |>
+        mutate(label = recode(name, hs0 = "sigma[1]", hs1 = "sigma[2]"))
+
+    # Determine aesthetics based on x_var
+    if (x_var == "scaling_epps") {
+        x_label <- expression("RMetric" ~ epsilon)
+        color_label <- "RMetric Radius"
+    } else {  # radius
+        x_label <- "RMetric Radius"
+        color_label <- expression("RMetric" ~ epsilon)
+    }
+
+    p <- ggplot(plot_data) +
+        geom_line(aes(x = !!sym(x_var), y = value, col = !!sym(color_var),
+                     group = interaction(!!sym(color_var), sample)),
+                 alpha = 0.4, linewidth = 0.2)
+
+    # Add rectangle if requested
+    if (add_rect) {
+        p <- p +
+            geom_rect(
+                data = tibble(
+                    label = c("sigma[1]", "sigma[2]"),
+                    xmin = -Inf,
+                    xmax = Inf,
+                    ymin = c(0, 0),
+                    ymax = c(1, 0.05)
+                ),
+                aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
+                col = "red", alpha = 0.8, inherit.aes = FALSE, linewidth = 1, fill = NA
+            )
+    }
+
+    # Complete the plot
+    p +
+        scale_color_scico(palette = "roma") +
+        facet_wrap(~ label, scales = "free_y", labeller = label_parsed) +
+        labs(
+            x = x_label,
+            y = "RMetric Estimate",
+            col = color_label,
+            title = title
+        )
+}
+
+# Create all four plots
+p1 <- plot_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius", add_rect = TRUE, title = "(a)")
+p2 <- plot_sensitivity(sensitivity, x_var = "radius", color_var = "scaling_epps",
+                       add_rect = TRUE, title = "(c)")
+p3 <- plot_sensitivity(sensitivity, x_var = "radius", color_var = "scaling_epps",
+                       zoom = TRUE, title = "(d)'")
+p4 <- plot_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius",
+                       zoom = TRUE, title = "(b)")
+
+# Combine all plots with patchwork
+(p1 + p4) / (p2 + p3) + plot_layout(guides = "collect") & theme(legend.position = "bottom")
+```
+
+```{r}
+
+```
