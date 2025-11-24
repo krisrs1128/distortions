@@ -38,7 +38,7 @@ Y <- as.matrix(read_csv(emb_csv)[, 1:2])
 message(sprintf("Computing perturbation score for noise=%s", noise))
 t_start <- Sys.time()
 pscore_val <- perturbation_score_compute(X, Y, 100, approx = 2)
-time_used <- Sys.time() - t_start
+time_used <- as.numeric(Sys.time() - t_start, units = "secs")
 
 # Save runtime to a text file
 runtime_path <- path(data_dir, paste0("runtime_", noise, ".txt"))
@@ -53,4 +53,8 @@ message("Wrote pscore results to: ", as.character(pscore_path))
 # produce a Sleepwalk HTML file (embedding vs original distances)
 html_file <- path(data_dir, paste0("swissroll_noise_", noise, ".html"))
 message("Saving sleepwalk html to: ", as.character(html_file))
+t_start <- Sys.time()
 sleepwalk(Y, X, saveToFile = as.character(html_file))
+time_used <- as.numeric(Sys.time() - t_start, units = "secs")
+runtime_path <- path(data_dir, paste0("runtime_sleepwalk_", noise, ".txt"))
+writeLines(as.character(time_used), runtime_path)

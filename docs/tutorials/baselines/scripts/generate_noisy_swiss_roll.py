@@ -21,7 +21,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--noise", type=float, required=True, help="noise magnitude to add to the Swiss roll")
     p.add_argument("--n-samples", type=int, default=1500)
-    p.add_argument("--random-state", type=int, default=42)
+    p.add_argument("--random-state", type=int, default=20251106)
     p.add_argument("--perplexity", type=float, default=100.0)
     p.add_argument("--data-dir", type=str, default="../data")
     args = p.parse_args()
