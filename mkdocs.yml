@@ -34,6 +34,9 @@ nav:
       - Understanding Isometrization with a Known Transformation: tutorials/fixed_transform.ipynb
       - Density Preservation in a Gaussian Mixture Dataset: tutorials/two_clusters.ipynb
       - Analyzing Topology Failures with Interlocking Links: tutorials/link_data.ipynb
-      - Saving Interactions as SVG: tutorials/svg.ipynb
+      - Sensitivity Analysis across Hyperparameters: tutorials/sensitivity.ipynb
+      - Exporting Coordinates and Static Views: tutorials/svg.ipynb
+      - Comparing Embeddings vs. RMetric Stability: tutorials/embedding-stability.ipynb
+      - Two Types of Distortion in a Variable Density Swiss Roll: tutorials/swiss_roll.ipynb
   - Reference:
       - Function reference: reference/api.md
