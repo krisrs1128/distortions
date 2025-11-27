@@ -1,0 +1,39 @@
+"""
+Snakemake workflow to generate noisy Swiss Roll datasets and run baselines.
+
+This Snakefile loops over noise values 0.0, 0.5, ... 3.
+
+Rules:
+ - all: depends on pscore CSV for all noise values
+ - generate: runs the Python generator
+ - baselines: runs the R script which computes pscore and sleepwalk output
+"""
+
+NOISES = ["0.0", "0.5", "1.0", "1.5", "2.0", "2.5", "3.0"]
+DATA_DIR = "data"
+SCRIPTS_DIR = "scripts"
+
+rule all:
+    input:
+        expand(f"{DATA_DIR}/swissroll_noise_{{noise}}.html", noise=NOISES)
+
+rule generate:
+    output:
+        data_csv = f"{DATA_DIR}/swiss_noise_{{noise}}.csv",
+        emb_csv = f"{DATA_DIR}/swiss_noise_{{noise}}_embedding.csv"
+    params:
+        noise=lambda wildcards: wildcards.noise
+    shell:
+        "python3 {SCRIPTS_DIR}/generate_noisy_swiss_roll.py --noise {params.noise} --data-dir {DATA_DIR}"
+
+rule baselines:
+    input:
+        data_csv = f"{DATA_DIR}/swiss_noise_{{noise}}.csv",
+        emb_csv = f"{DATA_DIR}/swiss_noise_{{noise}}_embedding.csv"
+    output:
+        pscore = f"{DATA_DIR}/pscore_{{noise}}.csv",
+        sleepwalk_html = f"{DATA_DIR}/swissroll_noise_{{noise}}.html"
+    params:
+        noise=lambda wildcards: wildcards.noise
+    shell:
+        "Rscript {SCRIPTS_DIR}/run_baselines.R --noise {params.noise} --data-dir {DATA_DIR}"

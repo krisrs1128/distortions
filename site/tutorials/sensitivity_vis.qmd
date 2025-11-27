@@ -1,0 +1,189 @@
+---
+title: Additional Sensitivity Visualizations
+---
+
+```{r}
+library(tidyverse)
+library(scico)
+library(patchwork)
+th <- theme_minimal() +
+    theme(
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(fill = "#f7f7f7"),
+        panel.border = element_rect(fill = NA, color = "#0c0c0c"),
+        axis.text = element_text(size = 14),
+        axis.title = element_text(size = 16),
+        strip.text = element_text(size = 16),
+        legend.position = "bottom"
+    )
+theme_set(th)
+```
+
+```{r}
+sensitivity <- read_csv("tutorials/data/sensitivity_sub_df.csv")
+sensitivity
+
+
+# Helper function to create sensitivity plots
+plot_sensitivity <- function(data, x_var, color_var, zoom = FALSE, add_rect = FALSE, title = "") {
+    # Apply zoom filter if requested
+    if (zoom) {
+        data <- data |>
+            group_by(sample) |>
+            filter(all(hs0 < 1) && all(hs1 < 0.05)) |>
+            ungroup()
+    }
+
+    # Prepare data
+    plot_data <- data |>
+        select(sample, scaling_epps, radius, hs0, hs1) |>
+        pivot_longer(hs0:hs1) |>
+        mutate(label = recode(name, hs0 = "sqrt(lambda[1])", hs1 = "sqrt(lambda[2])"))
+
+    # Determine aesthetics based on x_var
+    if (x_var == "scaling_epps") {
+        x_label <- expression("RMetric" ~ epsilon)
+        color_label <- "RMetric Radius"
+    } else {  # radius
+        x_label <- "RMetric Radius"
+        color_label <- expression("RMetric" ~ epsilon)
+    }
+
+    p <- ggplot(plot_data) +
+        geom_line(aes(x = !!sym(x_var), y = value, col = !!sym(color_var),
+                     group = interaction(!!sym(color_var), sample)),
+                 alpha = 0.4, linewidth = 0.2) +
+        scale_x_continuous(expand = c(0, 0))
+
+    # Add rectangle if requested
+    if (add_rect) {
+        p <- p +
+            geom_rect(
+                data = tibble(
+                    label = c("sqrt(lambda[1])", "sqrt(lambda[2])"),
+                    xmin = -Inf,
+                    xmax = Inf,
+                    ymin = c(0, 0),
+                    ymax = c(1, 0.05)
+                ),
+                aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
+                col = "red", alpha = 0.8, inherit.aes = FALSE, linewidth = 1, fill = NA, linetype = "dashed"
+            )
+    }
+
+    # Complete the plot
+    p <- p +
+        facet_wrap(~ label, scales = "free_y", labeller = label_parsed) +
+        labs(
+            x = x_label,
+            y = "RMetric Estimate",
+            col = color_label,
+            title = title
+        )
+
+    # Apply appropriate color scale based on color_var
+    if (color_var == "scaling_epps") {
+        p <- p + scale_color_gradient(low = "#1f77b4", high = "#ff7f0e")
+    } else {
+        p <- p + scale_color_scico(palette = "roma")
+    }
+
+    p
+}
+
+# New function to create plots for hv00, hv11, hv01, hv10
+plot_hv_sensitivity <- function(data, x_var, color_var, zoom = FALSE, add_rect = FALSE, title = "") {
+    # Apply zoom filter if requested (same logic as plot_sensitivity, but for hv columns)
+    if (zoom) {
+        data <- data |>
+            group_by(sample) |>
+            filter(all(hv00 < 1) && all(hv11 < 1) && all(hv01 < 1) && all(hv10 < 1)) |>
+            ungroup()
+    }
+
+    # Prepare data
+    plot_data <- data |>
+        select(sample, scaling_epps, radius, hv00, hv11, hv01, hv10) |>
+        pivot_longer(hv00:hv10) |>
+        mutate(label = recode(name,
+            hv00 = "v['00']",
+            hv11 = "v['11']",
+            hv01 = "v['01']",
+            hv10 = "v['10']"
+        ))
+
+    # Determine aesthetics based on x_var
+    if (x_var == "scaling_epps") {
+        x_label <- expression("RMetric" ~ epsilon)
+        color_label <- "RMetric Radius"
+    } else {  # radius
+        x_label <- "RMetric Radius"
+        color_label <- expression("RMetric" ~ epsilon)
+    }
+
+    p <- ggplot(plot_data) +
+        geom_line(aes(x = !!sym(x_var), y = value, col = !!sym(color_var),
+                     group = interaction(!!sym(color_var), sample)),
+                 alpha = 0.4, linewidth = 0.1) +
+        scale_x_continuous(expand = c(0, 0))
+
+    # Add rectangle if requested (default: no rectangle, but can be customized)
+    if (add_rect) {
+        p <- p +
+            geom_rect(
+                data = tibble(
+                    label = c("v['00']", "v['11']", "v['01']", "v['10']"),
+                    xmin = -Inf,
+                    xmax = Inf,
+                    ymin = 0,
+                    ymax = 1
+                ),
+                aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
+                col = "red", alpha = 0.8, inherit.aes = FALSE, linewidth = 1, fill = NA, linetype = "dashed"
+            )
+    }
+
+    # Complete the plot
+    p <- p +
+        facet_wrap(~ label, scales = "free_y", labeller = label_parsed) +
+        labs(
+            x = x_label,
+            y = "v Estimate",
+            col = color_label,
+            title = title
+        )
+
+    # Apply appropriate color scale based on color_var
+    if (color_var == "scaling_epps") {
+        p <- p + scale_color_gradient(low = "#1f77b4", high = "#ff7f0e")
+    } else {
+        p <- p + scale_color_scico(palette = "roma")
+    }
+
+    p
+}
+```
+
+```{r}
+# Create all four plots
+p1 <- plot_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius", add_rect = TRUE, title = "(a)")
+p2 <- plot_sensitivity(sensitivity, x_var = "radius", color_var = "scaling_epps",
+                       add_rect = TRUE, title = "(c)")
+p3 <- plot_sensitivity(sensitivity, x_var = "radius", color_var = "scaling_epps",
+                       zoom = TRUE, title = "(d)")
+p4 <- plot_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius",
+                       zoom = TRUE, title = "(b)")
+
+# Combine all plots with patchwork
+(p1 + p4) / (p2 + p3) + plot_layout(guides = "collect") & theme(legend.position = "bottom")
+ggsave("~/Downloads/sensitivity_combined.svg", width = 9, height = 7)
+```
+
+```{r}
+p1 <- plot_hv_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius", title = "(a)")
+p2 <- plot_hv_sensitivity(sensitivity, x_var = "radius", color_var = "scaling_epps",
+                       title = "(b)")
+(p1 + p2) + plot_layout(guides = "collect") & theme(legend.position = "bottom")
+ggsave("~/Downloads/sensitivity_vv.svg", dpi=200, width = 12, height = 8)
+
+```

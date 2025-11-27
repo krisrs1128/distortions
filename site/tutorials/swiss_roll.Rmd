@@ -1,0 +1,43 @@
+---
+title: Swiss Roll Comparison
+---
+
+```{r}
+library(RtsneWithP)
+library(fs)
+library(glue)
+library(neMDBD)
+library(readr)
+library(sleepwalk)
+set.seed(20251025)
+```
+
+## Read embeddings
+
+These embeddings were created in `swiss_roll.ipynb`.
+
+```{r}
+noise <- 0.5
+data_dir <- path("distortions/docs/tutorials/data/")
+X <- read_csv(data_dir / glue("swiss_noise_{noise}.csv")) |>
+    as.matrix()
+Y <- read_csv(data_dir / glue("swiss_noise_{noise}_embedding.csv")) |>
+    as.matrix()
+```
+
+## MDBD
+
+```{r}
+t1 <- Sys.time()
+pscore <- perturbation_score_compute(X, Y, 100, approx = 2)
+pscore <- 0
+Sys.time() - t1
+data.frame(score = pscore) |>
+    write_csv(data_dir/glue("pscore_{noise}.csv"))
+```
+
+## Sleepwalk
+
+```{r}
+sleepwalk(Y, X, saveToFile = "swissroll.html")
+```
