@@ -90,10 +90,3 @@ The full function reference can be found
 [here](https://krisrs1128.github.io/distortions/site/reference/api.html). You
 can find more realistic examples applying the package in the articles listed at
 the side of this page.
-
-## Help
-
-You can reach us by creating an Issue in the [package
-repository](https://github.com/krisrs1128/distortions/issues) or sending an
-email to [ksankaran@wisc.edu](mailto:ksankaran@wisc.edu). We appreciate your
-trying out the package and will try our best to reply promptly.
