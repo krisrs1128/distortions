@@ -21,7 +21,7 @@ matrix we explicitly set the diagonal to 1.0 for sparse matrices.
 We adopted the following convention:
    * adjacency_matrix will NOT BE GUARANTEED symmetric
    * affinity_matrix will perform a symmetrization by default
-   * laplacian performs symmetrization 
+   * laplacian performs symmetrization
      only if symmetrize_input=True (the default setting), and DOES NOT check symmetry
    * these conventions are the same for dense matrices, for consistency
 """
@@ -138,7 +138,7 @@ class Geometry(object):
     def set_matrix(self, X, input_type):
         """
         Set the data matrix given the input type.
-        
+
         Parameters
         ----------
         X : array-like
@@ -265,7 +265,7 @@ class Geometry(object):
     def set_data_matrix(self, X):
         """
         Set the data matrix.
-        
+
         Parameters
         ----------
         X : array-like, shape (n_samples, n_features)
@@ -277,7 +277,7 @@ class Geometry(object):
     def set_adjacency_matrix(self, adjacency_mat):
         """
         Set the adjacency matrix.
-        
+
         Parameters
         ----------
         adjacency_mat : sparse matrix, shape (n_samples, n_samples)
@@ -291,7 +291,7 @@ class Geometry(object):
     def set_affinity_matrix(self, affinity_mat):
         """
         Set the affinity matrix.
-        
+
         Parameters
         ----------
         affinity_mat : sparse matrix (N_obs, N_obs).
@@ -305,7 +305,7 @@ class Geometry(object):
     def set_laplacian_matrix(self, laplacian_mat):
         """
         Set the Laplacian matrix.
-        
+
         Parameters
         ----------
         laplacian_mat : sparse matrix (N_obs, N_obs).

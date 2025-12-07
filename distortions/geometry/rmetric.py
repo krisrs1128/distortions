@@ -91,7 +91,7 @@ def bind_metric(embedding, Hvv, Hs):
     combined.columns = list(embedding_df.columns) + metric_columns
     combined["angle"] = np.arctan(combined.y1 / combined.x1) * (180 / np.pi)
     return combined
-    
+
 def riemann_metric(Y, laplacian, n_dim=None, invert_h=False, mode_inv = 'svd'):
     """
     Parameters

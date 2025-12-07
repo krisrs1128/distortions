@@ -19,7 +19,7 @@ ellipse in the figure below represents the way in which distances in the
 original data manifold are warped. By hovering over different regions of the
 map, we invert the warping in the region surrounding the mouse. For example,
 this shows that the T cells near the top and bottom of the T cell cluster are in
-fact more distant from each othoer than the static embedding would suggest.
+fact more distant from each other than the static embedding would suggest.
 
 ![](https://github.com/krisrs1128/distortions-data/blob/main/figures/pbmc_isometry.gif?raw=true)
 
@@ -90,3 +90,10 @@ The full function reference can be found
 [here](https://krisrs1128.github.io/distortions/site/reference/api.html). You
 can find more realistic examples applying the package in the articles listed at
 the side of this page.
+
+## Help
+
+You can reach us by creating an Issue in the [package
+repository](https://github.com/krisrs1128/distortions/issues) or sending an
+email to [ksankaran@wisc.edu](mailto:ksankaran@wisc.edu). We appreciate your
+trying out the package and will try our best to reply promptly.

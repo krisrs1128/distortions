@@ -29,7 +29,11 @@ def expand_geoms(geom: Geometry, params: dict[list]):
 def metric_sensitivity(geoms: list[Geometry], embedding: np.array, data: pd.DataFrame) -> np.array:
     Hvv, Hs = [], []
     for g in geoms:
+        eps2 = g.laplacian_kwds.get("scaling_epps") ** 2
+        if eps2 is None:
+            eps2 = 1
+
         _, Hvv_i, Hs_i = local_distortions(embedding, data, g)
         Hvv.append(Hvv_i)
-        Hs.append(Hs_i)
+        Hs.append(Hs_i * eps2 / 4)
     return np.stack(Hvv), np.stack(Hs)
