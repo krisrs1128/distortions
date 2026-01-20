@@ -64,7 +64,9 @@ pscore_data <- data.frame(Y[ix, ]) |>
 
 ```{r}
 #| label: sleepwalk-pbmc
+time <- Sys.time()
 sleepwalk(Y, X, saveToFile = "distortions-dev/paper/figures/sleepwalk_pbmc.html")
+Sys.time() - time
 ```
 
 # Two Clusters Simulation
@@ -125,5 +127,7 @@ ggsave("distortions-dev/paper/figures/additional_baselines_pscores.svg", width=8
 
 ```{r}
 #| label: two-clusters-sleepwalk
+time <- Sys.time()
 sleepwalk(Y, X, saveToFile = "distortions-dev/paper/figures/sleepwalk_two_clusters.html")
+Sys.time() - time
 ```
