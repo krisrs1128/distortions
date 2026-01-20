@@ -4,17 +4,20 @@ title: Additional Evaluation Comparison
 execute:
     message: false
     warning: false
-    cache: true
+    cache: false
 ---
 
 ```{r}
 #| label: load-libraries
 library(SingleCellExperiment)
-library(zellkonverter)
 library(fs)
 library(glue)
 library(neMDBD)
+library(scico)
 library(sleepwalk)
+library(tidyverse)
+library(zellkonverter)
+theme_set(theme_classic())
 set.seed(20251025)
 ```
 
@@ -28,8 +31,7 @@ These embeddings were created in `pbmc.ipynb`. To run more quickly, we've subsam
 #| label: read-pbmc
 data_dir <- path("distortions/docs/tutorials/data/")
 pbmc <- readH5AD(data_dir / "pbmc_with_umap.h5ad")
-ix <- sample(nrow(X), 1e3)
-pbmc <- pbmc[, ix]
+ix <- sample(ncol(pbmc), 1e3)
 ```
 
 We get the original assay and the UMAP embedding.
@@ -43,18 +45,26 @@ Y <- int_colData(pbmc)$reducedDims$X_umap
 
 ```{r}
 #| label: pbmc-pscore
+#| eval: true
 t1 <- Sys.time()
-pscore <- perturbation_score_compute(X, Y, 100, approx = 2)
+pscore <- perturbation_score_compute(X[ix, ], Y[ix, ], 100, approx = 2)
 Sys.time() - t1
 data.frame(ix = ix, score = pscore) |>
-    write_csv(data_dir/glue("pscore_pbmc.csv"))
+    write_csv(data_dir/ "pscore_pbmc.csv")
+```
+
+```{r}
+pscore <- read_csv(data_dir / "pscore_pbmc.csv")
+pscore_data <- data.frame(Y[ix, ]) |>
+    bind_cols(pscore) |>
+    mutate(data = "PBMC Cell Types")
 ```
 
 ## Sleepwalk
 
 ```{r}
 #| label: sleepwalk-pbmc
-sleepwalk(Y, X, saveToFile = "sleepwalk_pbmc.html")
+sleepwalk(Y, X, saveToFile = "distortions-dev/paper/figures/sleepwalk_pbmc.html")
 ```
 
 # Two Clusters Simulation
@@ -72,6 +82,7 @@ Y <- int_colData(two_clusters)$reducedDims$X_umap
 
 ```{r}
 #| label: two-clusters-pscore
+#| eval: true
 t1 <- Sys.time()
 pscore <- perturbation_score_compute(X, Y, 100, approx = 2)
 Sys.time() - t1
@@ -79,9 +90,40 @@ data.frame(score = pscore) |>
     write_csv(data_dir/glue("p_score_two_clusters.csv"))
 ```
 
+```{r}
+#| fig-width: 8
+#| fig-height: 6
+pscore <- read_csv(data_dir / "p_score_two_clusters.csv")
+
+pscore_data <- data.frame(Y) |>
+    mutate(data = "Two Clusters") |>
+    bind_cols(pscore) |>
+    bind_rows(pscore_data) |>
+    mutate(data = factor(data, levels = c("Two Clusters", "PBMC Cell Types")))
+
+ggplot(pscore_data) +
+    geom_point(
+        aes(
+            X1, X2,
+            col = log1p(score),
+            size = log1p(score),
+            )
+        ) +
+    facet_wrap(~ data) +
+    scale_size(range = c(0, .8)) +
+    scale_color_scico(palette = "berlin") +
+    labs(col = "log(1 + LOO score)", size = "log(1 + LOO score)", x = "UMAP1", y = "UMAP2") +
+    theme(
+        axis.ticks = element_blank(),
+        axis.text = element_blank(),
+        panel.grid = element_blank()
+    )
+ggsave("distortions-dev/paper/figures/additional_baselines_pscores.svg", width=8, height=4)
+```
+
 ## Sleepwalk
 
 ```{r}
 #| label: two-clusters-sleepwalk
-sleepwalk(Y, X, saveToFile = "sleepwalk_two_clusters.html")
+sleepwalk(Y, X, saveToFile = "distortions-dev/paper/figures/sleepwalk_two_clusters.html")
 ```
