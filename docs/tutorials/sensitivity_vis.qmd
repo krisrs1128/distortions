@@ -38,7 +38,7 @@ plot_sensitivity <- function(data, x_var, color_var, zoom = FALSE, add_rect = FA
     plot_data <- data |>
         select(sample, scaling_epps, radius, hs0, hs1) |>
         pivot_longer(hs0:hs1) |>
-        mutate(label = recode(name, hs0 = "sigma[1]", hs1 = "sigma[2]"))
+        mutate(label = recode(name, hs0 = "sqrt(lambda[1])", hs1 = "sqrt(lambda[2])"))
 
     # Determine aesthetics based on x_var
     if (x_var == "scaling_epps") {
@@ -60,7 +60,7 @@ plot_sensitivity <- function(data, x_var, color_var, zoom = FALSE, add_rect = FA
         p <- p +
             geom_rect(
                 data = tibble(
-                    label = c("sigma[1]", "sigma[2]"),
+                    label = c("sqrt(lambda[1])", "sqrt(lambda[2])"),
                     xmin = -Inf,
                     xmax = Inf,
                     ymin = c(0, 0),
@@ -166,13 +166,14 @@ plot_hv_sensitivity <- function(data, x_var, color_var, zoom = FALSE, add_rect =
 
 ```{r}
 # Create all four plots
-p1 <- plot_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius", add_rect = TRUE, title = "(a)")
+p1 <- plot_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius",
+                      add_rect = TRUE, title = "A")
 p2 <- plot_sensitivity(sensitivity, x_var = "radius", color_var = "scaling_epps",
-                       add_rect = TRUE, title = "(c)")
+                       add_rect = TRUE, title = "C")
 p3 <- plot_sensitivity(sensitivity, x_var = "radius", color_var = "scaling_epps",
-                       zoom = TRUE, title = "(d)")
+                       zoom = TRUE, title = "D")
 p4 <- plot_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius",
-                       zoom = TRUE, title = "(b)")
+                       zoom = TRUE, title = "B")
 
 # Combine all plots with patchwork
 (p1 + p4) / (p2 + p3) + plot_layout(guides = "collect") & theme(legend.position = "bottom")
@@ -180,9 +181,9 @@ ggsave("~/Downloads/sensitivity_combined.svg", width = 9, height = 7)
 ```
 
 ```{r}
-p1 <- plot_hv_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius", title = "(a)")
+p1 <- plot_hv_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius", title = "A")
 p2 <- plot_hv_sensitivity(sensitivity, x_var = "radius", color_var = "scaling_epps",
-                       title = "(b)")
+                       title = "B")
 (p1 + p2) + plot_layout(guides = "collect") & theme(legend.position = "bottom")
 ggsave("~/Downloads/sensitivity_vv.svg", dpi=200, width = 12, height = 8)
 
