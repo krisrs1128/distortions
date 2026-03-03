@@ -5231,7 +5231,7 @@ function highlight_links(params, selected) {
 function annotate_outliers(params) {
   params.g.select(`.${params.opts.className}`).append("g").attr("class", "x-axis").attr("transform", `translate(0,${params.yBoxScale.range()[0]})`).call(axisBottom(params.xBoxScale)).selectAll("text").attr("transform", "rotate(90)").attr("x", 10).attr("y", -params.xBoxScale.bandwidth() * 0.25).style("text-anchor", "start");
   params.g.select(`.${params.opts.className}`).append("g").append("g").attr("class", "y-axis").attr("transform", `translate(${params.xBoxScale.range()[0]},0)`).call(axisLeft(params.yBoxScale).ticks(5));
-  params.g.select(`.${params.opts.className}`).append("text").attr("text-anchor", "middle").attr("x", (params.xBoxScale.range()[0] + params.xBoxScale.range()[1]) / 2).attr("y", params.yBoxScale.range()[1] - 10).style("fill", "#0c0c0c").style("font-size", "10px").text("Embedding vs. Original Distance");
+  params.g.select(`.${params.opts.className}`).append("text").attr("text-anchor", "middle").attr("x", (params.xBoxScale.range()[0] + params.xBoxScale.range()[1]) / 2).attr("y", params.yBoxScale.range()[1] - 10).style("fill", "#0c0c0c").style("font-size", params.opts.labelFontSize).text("Embedding vs. Original Distance");
 }
 
 // ../../../distortions-js/lib/inter_edge_link.js
