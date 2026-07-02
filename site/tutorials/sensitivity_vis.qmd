@@ -166,13 +166,14 @@ plot_hv_sensitivity <- function(data, x_var, color_var, zoom = FALSE, add_rect =
 
 ```{r}
 # Create all four plots
-p1 <- plot_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius", add_rect = TRUE, title = "(a)")
+p1 <- plot_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius",
+                      add_rect = TRUE, title = "A")
 p2 <- plot_sensitivity(sensitivity, x_var = "radius", color_var = "scaling_epps",
-                       add_rect = TRUE, title = "(c)")
+                       add_rect = TRUE, title = "C")
 p3 <- plot_sensitivity(sensitivity, x_var = "radius", color_var = "scaling_epps",
-                       zoom = TRUE, title = "(d)")
+                       zoom = TRUE, title = "D")
 p4 <- plot_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius",
-                       zoom = TRUE, title = "(b)")
+                       zoom = TRUE, title = "B")
 
 # Combine all plots with patchwork
 (p1 + p4) / (p2 + p3) + plot_layout(guides = "collect") & theme(legend.position = "bottom")
@@ -180,9 +181,9 @@ ggsave("~/Downloads/sensitivity_combined.svg", width = 9, height = 7)
 ```
 
 ```{r}
-p1 <- plot_hv_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius", title = "(a)")
+p1 <- plot_hv_sensitivity(sensitivity, x_var = "scaling_epps", color_var = "radius", title = "A")
 p2 <- plot_hv_sensitivity(sensitivity, x_var = "radius", color_var = "scaling_epps",
-                       title = "(b)")
+                       title = "B")
 (p1 + p2) + plot_layout(guides = "collect") & theme(legend.position = "bottom")
 ggsave("~/Downloads/sensitivity_vv.svg", dpi=200, width = 12, height = 8)
 
