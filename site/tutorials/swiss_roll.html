@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="two_clusters.html">
+        <link rel="prev" href="embedding-stability.html">
       
       
-        <link rel="next" href="sensitivity.html">
+        <link rel="next" href="../reference/api.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Analyzing Topology Failures with Interlocking Links - Distortions Reference Page</title>
+        <title>Two Types of Distortion in a Variable Density Swiss Roll - Distortions Reference Page</title>
       
     
     
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Analyzing Topology Failures with Interlocking Links
+              Two Types of Distortion in a Variable Density Swiss Roll
             
           </span>
         </div>
@@ -434,17 +434,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="link_data.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="link_data.html" class="md-nav__link">
         
   
   
@@ -455,7 +448,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -534,10 +526,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="swiss_roll.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="swiss_roll.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -548,6 +547,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -660,7 +660,7 @@
 
 
 
-  <h1>Analyzing Topology Failures with Interlocking Links</h1>
+  <h1>Two Types of Distortion in a Variable Density Swiss Roll</h1>
 
 <script>
 (function (global, factory) {
@@ -1099,12 +1099,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a186b1a7">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=cbf2f848">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-1">
@@ -1118,24 +1118,24 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">distortions.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">bind_metric</span><span class="p">,</span> <span class="n">local_distortions</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_swiss_roll</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.manifold</span><span class="w"> </span><span class="kn">import</span> <span class="n">TSNE</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-1">import numpy as np
-import pandas as pd
-from distortions.geometry import Geometry, bind_metric, local_distortions</div>
+from sklearn.datasets import make_swiss_roll
+from sklearn.manifold import TSNE</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8de443c0">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c6775283">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-2">
@@ -1148,65 +1148,25 @@ from distortions.geometry import Geometry, bind_metric, local_distortions</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-    
-<span class="k">def</span><span class="w"> </span><span class="nf">rotate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
-    <span class="n">u</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="n">cos_val</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mf">0.4</span><span class="p">)</span>
-    <span class="n">sin_val</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">0.4</span><span class="p">)</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">cos_val</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">sin_val</span> <span class="o">*</span> <span class="n">z</span>
-    <span class="n">w</span> <span class="o">=</span> <span class="o">-</span><span class="n">sin_val</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">cos_val</span> <span class="o">*</span> <span class="n">z</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">]</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">link_data</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    https://github.com/kevinrobinson/umap-playground/blob/master/public/assets/demo-datas.js#L311</span>
-<span class="sd">    """</span>
-    <span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">t</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">i</span> <span class="o">/</span> <span class="n">n</span>
-        <span class="n">sin_t</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-        <span class="n">cos_t</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-        <span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rotate</span><span class="p">(</span><span class="n">cos_t</span><span class="p">,</span> <span class="n">sin_t</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-        <span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rotate</span><span class="p">(</span><span class="n">offset</span> <span class="o">+</span> <span class="n">cos_t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sin_t</span><span class="p">))</span>
-    
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">n_samples</span> <span class="o">=</span> <span class="mi">1500</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="mf">0.75</span>
+<span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2">import math
-    
-def rotate(x, y, z):
-    u = x
-    cos_val = math.cos(0.4)
-    sin_val = math.sin(0.4)
-    v = cos_val * y + sin_val * z
-    w = -sin_val * y + cos_val * z
-    return [u, v, w]
-
-def link_data(n, offset=1):
-    """
-    https://github.com/kevinrobinson/umap-playground/blob/master/public/assets/demo-datas.js#L311
-    """
-    points = []
-    for i in range(n):
-        t = 2 * math.pi * i / n
-        sin_t = math.sin(t)
-        cos_t = math.cos(t)
-        points.append(rotate(cos_t, sin_t, 0))
-        points.append(rotate(offset + cos_t, 0, sin_t))
-    
-    return np.array(points)</div>
+<div class="clipboard-copy-txt" id="cell-2">n_samples = 1500
+noise = 0.75
+random_state = 42</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9a2ce388">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=638e053a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-3">
@@ -1219,41 +1179,25 @@ def link_data(n, offset=1):
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">anndata</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnnData</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">scanpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sc</span>
-
-<span class="n">M</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">link_data</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
-
-<span class="n">adata</span> <span class="o">=</span> <span class="n">AnnData</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">M</span><span class="p">)))</span>
-<span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
-<span class="n">sc</span><span class="o">.</span><span class="n">tl</span><span class="o">.</span><span class="n">umap</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span>
-<span class="n">embedding</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">obsm</span><span class="p">[</span><span class="s2">"X_umap"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">make_swiss_roll</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="n">random_state</span><span class="p">)</span>
+<span class="n">X_noisy</span> <span class="o">=</span> <span class="n">X</span> <span class="o">+</span> <span class="n">noise</span> <span class="o">*</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">from anndata import AnnData
-import scanpy as sc
-
-M = 100
-n_neighbors = 50
-data = link_data(M)
-
-adata = AnnData(X=data, obs=pd.DataFrame(range(2 * M)))
-sc.pp.neighbors(adata, n_neighbors=50)
-sc.tl.umap(adata)
-embedding = adata.obsm["X_umap"].copy()</div>
+<div class="clipboard-copy-txt" id="cell-3">X, t = make_swiss_roll(n_samples, noise=0.0, random_state=random_state)
+rng = np.random.RandomState(random_state)
+X_noisy = X + noise * rng.normal(size=X.shape)</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a08c3be5">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4948e6b3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-4">
@@ -1266,29 +1210,23 @@ embedding = adata.obsm["X_umap"].copy()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">radius</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">adata</span><span class="o">.</span><span class="n">obsp</span><span class="p">[</span><span class="s2">"distances"</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-<span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">(</span><span class="s2">"brute"</span><span class="p">,</span> <span class="n">laplacian_method</span><span class="o">=</span><span class="s2">"geometric"</span><span class="p">,</span> <span class="n">affinity_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"radius"</span><span class="p">:</span> <span class="n">radius</span><span class="p">},</span> <span class="n">adjacency_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"n_neighbors"</span><span class="p">:</span> <span class="n">n_neighbors</span><span class="p">},</span> <span class="n">laplacian_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"scaling_epps"</span><span class="p">:</span> <span class="mi">5</span><span class="p">})</span>
-<span class="n">H</span><span class="p">,</span> <span class="n">Hvv</span><span class="p">,</span> <span class="n">Hs</span> <span class="o">=</span> <span class="n">local_distortions</span><span class="p">(</span><span class="n">embedding</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">geom</span><span class="p">)</span>
-<span class="n">embedding</span> <span class="o">=</span> <span class="n">bind_metric</span><span class="p">(</span><span class="n">embedding</span><span class="p">,</span> <span class="n">Hvv</span><span class="p">,</span> <span class="n">Hs</span><span class="p">)</span>
-<span class="n">embedding</span><span class="p">[</span><span class="s2">"x_orig"</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">tsne</span> <span class="o">=</span> <span class="n">TSNE</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">perplexity</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="s1">'auto'</span><span class="p">)</span>
+<span class="n">X_emb</span> <span class="o">=</span> <span class="n">tsne</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_noisy</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">radius = 3 * np.mean(adata.obsp["distances"].data)
-geom = Geometry("brute", laplacian_method="geometric", affinity_kwds={"radius": radius}, adjacency_kwds={"n_neighbors": n_neighbors}, laplacian_kwds={"scaling_epps": 5})
-H, Hvv, Hs = local_distortions(embedding, data, geom)
-embedding = bind_metric(embedding, Hvv, Hs)
-embedding["x_orig"] = data[:, 0]</div>
+<div class="clipboard-copy-txt" id="cell-4">tsne = TSNE(n_components=2, perplexity=100, random_state=random_state, learning_rate='auto')
+X_emb = tsne.fit_transform(X_noisy)</div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cba08937">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8934b7ec">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-5">
@@ -1301,49 +1239,43 @@ embedding["x_orig"] = data[:, 0]</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">neighborhoods</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">distortions.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">dplot</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">altair</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">alt</span>
 
-<span class="n">N</span> <span class="o">=</span> <span class="n">neighborhoods</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">outlier_factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">dplot</span><span class="p">(</span><span class="n">embedding</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>\
-    <span class="o">.</span><span class="n">mapping</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">"embedding_0"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"embedding_1"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"x_orig"</span><span class="p">)</span>\
-    <span class="o">.</span><span class="n">inter_edge_link</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>\
-    <span class="o">.</span><span class="n">geom_ellipse</span><span class="p">()</span>\
-    <span class="o">.</span><span class="n">scale_color</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'x'</span><span class="p">:</span> <span class="n">X_emb</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">'y'</span><span class="p">:</span> <span class="n">X_emb</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">'t'</span><span class="p">:</span> <span class="n">t</span> <span class="p">})</span>
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'t-SNE 1'</span><span class="p">),</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'y'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'t-SNE 2'</span><span class="p">),</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'t:Q'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'unrolled coordinate'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">'spectral'</span><span class="p">)),</span>
+    <span class="p">)</span>\
+    <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"t-SNE embedding of Swiss Roll (noise=</span><span class="si">{</span><span class="n">noise</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">from distortions.geometry import neighborhoods
-from distortions.visualization import dplot
+<div class="clipboard-copy-txt" id="cell-5">import pandas as pd
+import altair as alt
 
-N = neighborhoods(adata, threshold=0.01, outlier_factor=2)
-dplot(embedding, width=900, height=500)\
-    .mapping(x="embedding_0", y="embedding_1", color="x_orig")\
-    .inter_edge_link(N=N, threshold=1)\
-    .geom_ellipse()\
-    .scale_color()</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>dplot(dataset=[{'embedding_0': 9.539716720581055, 'embedding_1': 3.1580326557159424, 'x0': -0.8638632514305921…</pre>
+df = pd.DataFrame({'x': X_emb[:, 0], 'y': X_emb[:, 1], 't': t })
+alt.Chart(df)\
+    .mark_circle(size=30)\
+    .encode(
+        x=alt.X('x', title='t-SNE 1'),
+        y=alt.Y('y', title='t-SNE 2'),
+        color=alt.Color('t:Q', title='unrolled coordinate', scale=alt.Scale(scheme='spectral')),
+    )\
+    .properties(title=f"t-SNE embedding of Swiss Roll (noise={noise})")</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e5193418">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=452aed18">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-6">
@@ -1356,61 +1288,49 @@ dplot(embedding, width=900, height=500)\
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">plots</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">offset</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distortions.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">bind_metric</span><span class="p">,</span> <span class="n">local_distortions</span><span class="p">,</span> <span class="n">neighborhood_distances</span><span class="p">,</span> <span class="n">neighborhoods</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">distortions.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">dplot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">anndata</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnnData</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">NearestNeighbors</span>
 
-    <span class="n">data</span> <span class="o">=</span> <span class="n">link_data</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">)</span>
-    <span class="n">adata</span> <span class="o">=</span> <span class="n">AnnData</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">M</span><span class="p">)))</span>
-    <span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
-    <span class="n">sc</span><span class="o">.</span><span class="n">tl</span><span class="o">.</span><span class="n">umap</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span>
-    <span class="n">embedding</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">obsm</span><span class="p">[</span><span class="s2">"X_umap"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">(</span><span class="n">affinity_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"radius"</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="n">adjacency_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"n_neighbors"</span><span class="p">:</span> <span class="n">n_neighbors</span><span class="p">})</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">Hvv</span><span class="p">,</span> <span class="n">Hs</span> <span class="o">=</span> <span class="n">local_distortions</span><span class="p">(</span><span class="n">X_emb</span><span class="p">,</span> <span class="n">X_noisy</span><span class="p">,</span> <span class="n">geom</span><span class="p">)</span>
+<span class="n">embedding</span> <span class="o">=</span> <span class="n">bind_metric</span><span class="p">(</span><span class="n">X_emb</span><span class="p">,</span> <span class="n">Hvv</span><span class="p">,</span> <span class="n">Hs</span><span class="p">)</span>
 
-    <span class="n">H</span><span class="p">,</span> <span class="n">Hvv</span><span class="p">,</span> <span class="n">Hs</span> <span class="o">=</span> <span class="n">local_distortions</span><span class="p">(</span><span class="n">embedding</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">geom</span><span class="p">)</span>
-    <span class="n">embedding</span> <span class="o">=</span> <span class="n">bind_metric</span><span class="p">(</span><span class="n">embedding</span><span class="p">,</span> <span class="n">Hvv</span><span class="p">,</span> <span class="n">Hs</span><span class="p">)</span>
-    <span class="n">embedding</span><span class="p">[</span><span class="s2">"x_orig"</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
-
-    <span class="n">N</span> <span class="o">=</span> <span class="n">neighborhoods</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">outlier_factor</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">metrics</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">H</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">H</span><span class="p">))}</span>
-    <span class="n">plots</span> <span class="o">+=</span> <span class="p">[</span><span class="n">dplot</span><span class="p">(</span><span class="n">embedding</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">mapping</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">"embedding_0"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"embedding_1"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"x_orig"</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">geom_ellipse</span><span class="p">()</span>\
-        <span class="o">.</span><span class="n">inter_edge_link</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">offset</span><span class="si">}</span><span class="s2"> Units Apart"</span><span class="p">)</span>\
-        <span class="o">.</span><span class="n">scale_color</span><span class="p">()]</span>
+<span class="n">adata</span> <span class="o">=</span> <span class="n">AnnData</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">X_noisy</span><span class="p">)</span>
+<span class="n">nn</span> <span class="o">=</span> <span class="n">NearestNeighbors</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">n_neighbors</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">"euclidean"</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_noisy</span><span class="p">)</span>
+<span class="n">knn_graph</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">kneighbors_graph</span><span class="p">(</span><span class="n">X_noisy</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"distance"</span><span class="p">)</span>  <span class="c1"># sparse CSR matrix</span>
+<span class="n">adata</span><span class="o">.</span><span class="n">obsp</span><span class="p">[</span><span class="s2">"distances"</span><span class="p">]</span> <span class="o">=</span> <span class="n">knn_graph</span>
+<span class="n">adata</span><span class="o">.</span><span class="n">obsm</span><span class="p">[</span><span class="s2">"X_tsne"</span><span class="p">]</span> <span class="o">=</span> <span class="n">X_emb</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6">plots = []
-for offset in np.linspace(0.5, 2.5, 5):
+<div class="clipboard-copy-txt" id="cell-6">from distortions.geometry import Geometry, bind_metric, local_distortions, neighborhood_distances, neighborhoods
+from distortions.visualization import dplot
+from anndata import AnnData
+from sklearn.neighbors import NearestNeighbors
 
-    data = link_data(M, offset=offset)
-    adata = AnnData(X=data, obs=pd.DataFrame(range(2 * M)))
-    sc.pp.neighbors(adata, n_neighbors=50)
-    sc.tl.umap(adata)
-    embedding = adata.obsm["X_umap"].copy()
+n_neighbors = 15
+geom = Geometry(affinity_kwds={"radius": 2}, adjacency_kwds={"n_neighbors": n_neighbors})
+_, Hvv, Hs = local_distortions(X_emb, X_noisy, geom)
+embedding = bind_metric(X_emb, Hvv, Hs)
 
-    H, Hvv, Hs = local_distortions(embedding, data, geom)
-    embedding = bind_metric(embedding, Hvv, Hs)
-    embedding["x_orig"] = data[:, 0]
-
-    N = neighborhoods(adata, threshold=0.2, outlier_factor=2)
-    metrics = {k: H[k] for k in range(len(H))}
-    plots += [dplot(embedding, width=400, height=400)\
-        .mapping(x="embedding_0", y="embedding_1", color="x_orig")\
-        .geom_ellipse()\
-        .inter_edge_link(N=N, threshold=1)\
-        .labs(title=f"{offset} Units Apart")\
-        .scale_color()]</div>
+adata = AnnData(X=X_noisy)
+nn = NearestNeighbors(n_neighbors=n_neighbors, metric="euclidean").fit(X_noisy)
+knn_graph = nn.kneighbors_graph(X_noisy, mode="distance")  # sparse CSR matrix
+adata.obsp["distances"] = knn_graph
+adata.obsm["X_tsne"] = X_emb</div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8a68bfe3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=32d8ed03">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
@@ -1423,51 +1343,108 @@ for offset in np.linspace(0.5, 2.5, 5):
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="p">[</span><span class="n">display</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">plots</span><span class="p">]</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">distances</span> <span class="o">=</span> <span class="n">neighborhood_distances</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="s2">"X_tsne"</span><span class="p">)</span>
+<span class="n">plot</span> <span class="o">=</span> <span class="n">dplot</span><span class="p">(</span><span class="n">embedding</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">350</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">mapping</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">"embedding_0"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"embedding_1"</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">inter_boxplot</span><span class="p">(</span><span class="n">dists</span><span class="o">=</span><span class="n">distances</span><span class="p">,</span> <span class="n">outlier_iqr</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">highlightColor</span><span class="o">=</span><span class="s2">"#F25E7A"</span><span class="p">,</span> <span class="n">strokeWidth</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">geom_ellipse</span><span class="p">(</span><span class="n">radiusMin</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">radiusMax</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">[display(p) for p in plots]</div>
+<div class="clipboard-copy-txt" id="cell-7">distances = neighborhood_distances(adata, "X_tsne")
+plot = dplot(embedding, height=350, width=500)\
+    .mapping(x="embedding_0", y="embedding_1")\
+    .inter_boxplot(dists=distances, outlier_iqr=10, highlightColor="#F25E7A", strokeWidth=0.4)\
+    .geom_ellipse(radiusMin=1.5, radiusMax=20)</div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>dplot(dataset=[{'embedding_0': 3.289219617843628, 'embedding_1': 13.244303703308105, 'x0': -0.6242006037121905…</pre>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1da7e193">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
 </div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>dplot(dataset=[{'embedding_0': 9.539716720581055, 'embedding_1': 3.1580326557159424, 'x0': -0.8638632514305921…</pre>
+</clipboard-copy>
 </div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>dplot(dataset=[{'embedding_0': 12.08263111114502, 'embedding_1': 9.085368156433105, 'x0': -0.4536952649302679,…</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>dplot(dataset=[{'embedding_0': 0.22946549952030182, 'embedding_1': 0.14115360379219055, 'x0': -0.5723637280364…</pre>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">plot</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-8">plot</div>
 </div>
 </div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>dplot(dataset=[{'embedding_0': 7.340658664703369, 'embedding_1': 4.244654655456543, 'x0': -0.8520414657269931,…</pre>
 </div>
 </div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[None, None, None, None, None]</pre>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c7b31a76">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-9">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="n">neighborhoods</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span> <span class="n">outlier_factor</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">embed_key</span><span class="o">=</span><span class="s2">"X_tsne"</span><span class="p">)</span>
+
+<span class="n">plot</span> <span class="o">=</span> <span class="n">dplot</span><span class="p">(</span><span class="n">embedding</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">mapping</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">"embedding_0"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"embedding_1"</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">inter_edge_link</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">strokeWidth</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">stroke</span><span class="o">=</span><span class="s2">"#F25E7A"</span><span class="p">,</span> <span class="n">highlightColor</span><span class="o">=</span><span class="s2">"#C83F58"</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">geom_ellipse</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-9">N = neighborhoods(adata, threshold=.2, outlier_factor=9, embed_key="X_tsne")
+
+plot = dplot(embedding)\
+    .mapping(x="embedding_0", y="embedding_1")\
+    .inter_edge_link(N=N, strokeWidth=.2, opacity=0.7, threshold=10, stroke="#F25E7A", highlightColor="#C83F58")\
+    .geom_ellipse()</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fd50ea63">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">plot</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-10">plot</div>
 </div>
 </div>
 </div>
